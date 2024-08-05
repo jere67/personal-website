@@ -84,7 +84,9 @@ export const BentoGridItem = ({
           <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
             {title}
           </div>
-        
+        {id === 1 && (
+          <img className="mx-auto relative overflow-hidden py-3 px-4 h-96" src="/umich.png"/>
+        )}
 
         {id === 2 && (
           <GlobeDemo />
