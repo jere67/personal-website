@@ -1,11 +1,11 @@
 import { projects } from '@/data'
 import React from 'react'
 import { PinContainer } from './ui/3d-pin'
-import { FaLocationArrow } from 'react-icons/fa6'
+import { FaGithub, FaLocationArrow } from 'react-icons/fa6'
 
 const Projects = () => {
   return (
-    <div className='py-20'>
+    <div className='py-20' id='projects'>
       <h1 className='heading'>
         Featured {' '}
         <span className='text-purple'>Projects</span>
@@ -43,8 +43,13 @@ const Projects = () => {
                 </div>
 
                 <div className='flex justify-center items-center'>
+                  {/* TODO: Add functioning href to code */}
+                  {/* <a className='mx-3 line-clamp-1' href='https://www.google.com'>
+                    <p className='flex lg:text-xl md:text-xs text-sm text-purple'>Code</p>
+                    <FaGithub className='ms-1 me-3' color='#CBACF9'/>
+                  </a> */}
                   <p className='flex lg:text-xl md:text-xs text-sm text-purple'>Live Demo</p>
-                  <FaLocationArrow className='ms-3' color='#CBACF9'/>
+                  <FaLocationArrow className='ms-1' color='#CBACF9'/>
                 </div>
               </div>
             </PinContainer>
