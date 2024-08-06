@@ -1,5 +1,6 @@
 import { cn } from "@/utils/cn";
 import { GlobeDemo } from "./GridGlobe";
+import StacksCard from "./StacksCard";
 
 export const BentoGrid = ({
   className,
@@ -89,6 +90,7 @@ export const BentoGridItem = ({
         )}
 
         {id === 2 && (
+          // TODO: Add a pinpoint to current location
           <GlobeDemo />
         )}
 
@@ -118,7 +120,9 @@ export const BentoGridItem = ({
           </div>
         )}
 
-        
+        {id === 4 && (
+          <StacksCard />
+        )}
       </div>
     </div>
     </div>

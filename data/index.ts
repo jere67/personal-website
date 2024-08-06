@@ -9,7 +9,7 @@ export const gridItems = [
   {
     id: 1,
     title: "University of Michigan",
-    description: "",
+    description: "Bachelor of Science in Engineering in Data Science | GPA: 3.96/4.00",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "",
     titleClassName: "justify-end",
@@ -18,8 +18,8 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Vancouver, BC, Canada",
-    description: "",
+    title: "Ann Arbor, MI",
+    description: "Currently located in",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-start",
@@ -44,7 +44,7 @@ export const gridItems = [
     imgClassName: "",
     titleClassName: "justify-start",
     img: "/grid.svg",
-    spareImg: "/b4.svg",
+    spareImg: "",
   },
 
   {
