@@ -13,7 +13,7 @@ import AnimatedSignature from "./AnimatedSignature";
 
 const HeroContent = () => {
   return (
-    <motion.div initial="hidden" animate="visible" className="flex flex-row items-center justify-center px-20 mt-40 w-full z-[20]">
+    <motion.div initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-center px-20 mt-40 w-full h-full z-[20]">
       <div className="h-full w-full flex flex-col gap-5 justify-center text-start">
         <TextGenerateEffect
           className='flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto' 
@@ -25,7 +25,7 @@ const HeroContent = () => {
         </motion.p>
       </div>
 
-      <motion.div variants={slideInFromRight(1.4)} className="w-full h-full flex flex-col justify-center items-center">
+      <motion.div variants={slideInFromRight(1.4)} className="w-full h-full flex flex-col justify-center items-center lg:pl-48">
         <Image
           src="/my-head.png"
           alt="me"
@@ -33,7 +33,7 @@ const HeroContent = () => {
           width={250}
           className="rounded-full mb-5"
         />
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center pb-52">
           <AnimatedSignature />
         </div>
       </motion.div>
