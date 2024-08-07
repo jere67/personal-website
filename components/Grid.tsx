@@ -5,7 +5,7 @@ import { gridItems } from '@/data'
 const Grid = () => {
   return (
     <section id="about">
-      <div className='pt-32 pb-12'>
+      <div className='pt-32 pb-12 z-[20]'>
         <h1 className='heading'>
           About {' '}
           <span className='text-purple'>Me</span>
