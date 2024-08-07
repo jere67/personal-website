@@ -11,6 +11,7 @@ const Projects = () => {
         <span className='text-purple'>Projects</span>
       </h1>
 
+      {/* TODO: Fit Project images better to card */}
       <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
         {projects.map(({ id, title, des, img, iconLists, link }) => (
           <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw]'>
@@ -22,7 +23,7 @@ const Projects = () => {
                 <img 
                   src={img}
                   alt={title}
-                  className='z-10 absolute bottom-0'
+                  className='z-10 absolute bottom-0 rounded-3xl h-full'
                 />
               </div>
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
