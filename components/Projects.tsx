@@ -14,7 +14,7 @@ const Projects = () => {
       {/* TODO: Fit Project images better to card */}
       <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
         {projects.map(({ id, title, des, img, iconLists, link }) => (
-          <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw]'>
+          <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw] z-[20]'>
             <PinContainer title={link} href={link} >
               <div className='relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10'>
                 <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>

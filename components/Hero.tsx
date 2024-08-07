@@ -39,9 +39,9 @@ const Hero = () => {
     //   </div>
     // </div>
 
-    <div className='pb-20 pt-36 relative flex flex-col h-[850px] w-full'>
+    <div className='pb-20 pt-36 relative flex flex-col h-screen w-full'>
       <img 
-        className='rotate-180 absolute top-[-440px] left-0 z-[1] w-[98vw] h-[98vh] object-cover' 
+        className='rotate-180 absolute top-[-500px] left-0 z-[1] w-[98vw] h-[98vh] object-cover' 
         src='/moon.jpg'
       />
       {/* <video autoPlay muted loop className='rotate-180 absolute top-[-440px] left-0 z-[1] w-full h-full object-cover'>
