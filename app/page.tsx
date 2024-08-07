@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Grid from "@/components/Grid";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
 import { Navbar } from "@/components/ui/Navbar";
 import { navItems } from "@/data";
 import { FaHome } from "react-icons/fa";
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <Grid />
         <Projects />
+        <Skills />
         <Footer />
       </div>
     </main>
