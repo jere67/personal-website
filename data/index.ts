@@ -143,7 +143,7 @@ export const projects = [
     des: "A website that showcases who I am and some of my proudest work and achievements.",
     img: "/personal_website.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg"],
-    link: "localhost:3000/",
+    link: "jeremymoon.dev",
   },
 ];
 
