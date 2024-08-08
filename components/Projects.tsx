@@ -8,7 +8,7 @@ const Projects = () => {
     <div className='py-20' id='projects'>
       <h1 className='heading'>
         Featured {' '}
-        <span className='text-purple'>Projects</span>
+        <span className='text-blue-300'>Projects</span>
       </h1>
 
       {/* TODO: Fit Project images better to card */}

@@ -8,7 +8,7 @@ const Grid = () => {
       <div className='pt-32 pb-12 z-[20]'>
         <h1 className='heading'>
           About {' '}
-          <span className='text-purple'>Me</span>
+          <span className='text-blue-300'>Me</span>
         </h1>
       </div>
       <BentoGrid>

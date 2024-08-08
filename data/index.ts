@@ -98,7 +98,7 @@ export const projects = [
     id: 4,
     title: "Personal Website",
     des: "A website that showcases who I am and some of my proudest work and achievements.",
-    img: "/website.png",
+    img: "/personal_website.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg"],
     link: "/",
   },

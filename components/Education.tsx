@@ -7,7 +7,7 @@ const Education = () => {
       <div className='pb-12 z-[20]'>
         <h1 className='heading z-20'>
           My {' '}
-          <span className='text-purple z-20'>Education</span>
+          <span className='text-blue-300 z-20'>Education</span>
         </h1>
       </div>
 

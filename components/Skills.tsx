@@ -41,7 +41,7 @@ const Skills = () => {
       <div className='pt-8 pb-12 z-[20]'>
         <h1 className='heading'>
           My {' '}
-          <span className='text-purple'>Skills</span>
+          <span className='text-blue-300'>Skills</span>
         </h1>
       </div>
 
