@@ -25,6 +25,7 @@ const Skills = () => {
           id={`${prefix}-${index}`}
           hoveredId={hoveredId}
           setHoveredId={setHoveredId}
+          skillName={image.skillName}  // Add this line
         />
       ))}
     </div>

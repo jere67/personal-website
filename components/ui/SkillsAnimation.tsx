@@ -12,9 +12,10 @@ interface Props {
     id: string;
     hoveredId?: string | null;
     setHoveredId: (id: string | null) => void;
+    skillName: string;
 }
 
-const SkillsAnimation = ({ src, width, height, id, hoveredId, setHoveredId }: Props) => {
+const SkillsAnimation = ({ src, width, height, id, hoveredId, setHoveredId, skillName }: Props) => {
     const {ref, inView} = useInView({
         triggerOnce: true
     })
@@ -26,8 +27,6 @@ const SkillsAnimation = ({ src, width, height, id, hoveredId, setHoveredId }: Pr
 
     const animationDelay = 0.3
 
-    const padding = Math.max(10, Math.min(20, Math.floor(width * 0.2)))
-
     return (
         <motion.div
             ref={ref}
@@ -36,16 +35,21 @@ const SkillsAnimation = ({ src, width, height, id, hoveredId, setHoveredId }: Pr
             animate={inView ? "visible" : "hidden"}
             custom={id}
             transition={{delay: parseFloat(id) * animationDelay}}
-            className='relative'
+            className='relative group'
             onMouseEnter={() => setHoveredId(id)}
             onMouseLeave={() => setHoveredId(null)}
-            style={{ padding: `${padding}px` }}
         >
+            <Image
+                src={src}
+                width={width}
+                height={height}
+                alt={skillName}
+                className='relative z-10'
+            />
             <AnimatePresence>
                 {hoveredId === id && (
                     <motion.div
-                        className="absolute inset-0 bg-neutral-200 dark:bg-slate-800/[0.8] rounded-3xl z-10"
-                        layoutId="hoverBackground"
+                        className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center z-20"
                         initial={{ opacity: 0 }}
                         animate={{
                             opacity: 1,
@@ -55,16 +59,13 @@ const SkillsAnimation = ({ src, width, height, id, hoveredId, setHoveredId }: Pr
                             opacity: 0,
                             transition: { duration: 0.15, delay: 0.2 },
                         }}
-                    />
+                    >
+                        <span className="text-white text-center px-2 py-1" style={{ fontSize: `${Math.max(12, Math.min(16, width / 5))}px` }}>
+                            {skillName}
+                        </span>
+                    </motion.div>
                 )}
             </AnimatePresence>
-            <Image
-                src={src}
-                width={width}
-                height={height}
-                alt='Skill Image'
-                className='relative z-20'
-            />
         </motion.div>
     )
 }
