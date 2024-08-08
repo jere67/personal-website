@@ -10,6 +10,10 @@
   <a aria-label="Framework" href="https://nextjs.org">
     <img alt="" src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=Next.js&labelColor=000">
   </a>
+  <img alt="" src="https://img.shields.io/github/languages/top/jere67/personal-website?style=for-the-badge&labelColor=000">
+  <a aria-label="License" href="https://github.com/jere67/personal-website/blob/main/LICENSE">
+    <img alt="" src="https://img.shields.io/github/license/jere67/personal-website?style=for-the-badge&labelColor=000">
+  </a>
 </p>
 
 Hello and welcome to my portfolio website! My name is Jeremy Moon, and I am a student at the University of Michigan studying Data Science. Thank you for taking the time to visit my website and learn more about my education, projects, and skills!
