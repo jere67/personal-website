@@ -34,7 +34,7 @@ const Education = () => {
             <h2 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>Awards</h2>
             <ul>
               <li>William J. Branstrom Freshman Prize (Top 5%)</li>
-              <li>2x Dean's Honor List</li>
+              <li>2x Dean&apos;s Honor List</li>
               <li>University Honors</li>
             </ul>
           </div>
