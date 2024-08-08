@@ -28,7 +28,7 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "Connect",
+    title: "",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -69,6 +69,49 @@ export const gridItems = [
   },
 ];
 
+export const images = [
+  {
+    id: 1,
+    img: "/img1.jpg",
+  },
+  {
+    id: 2,
+    img: "/img2.jpg",
+  },
+  {
+    id: 3,
+    img: "/img3.jpg",
+  },
+  {
+    id: 4,
+    img: "/img4.jpg",
+  },
+  {
+    id: 5,
+    img: "/img5.jpg",
+  },
+  {
+    id: 6,
+    img: "/img6.jpg",
+  },
+  {
+    id: 7,
+    img: "/img7.jpg",
+  },
+  {
+    id: 8,
+    img: "/img8.jpg",
+  },
+  {
+    id: 9,
+    img: "/img9.jpg",
+  },
+  {
+    id: 10,
+    img: "/img10.jpg",
+  },
+]
+
 export const projects = [
   {
     id: 1,
@@ -107,25 +150,25 @@ export const projects = [
 export const languages = [
   {
     skillName: "C/C++",
-    Image: "/c++.png",
+    img: "/c++.png",
     width: 70,
     height: 70,
   },
   {
     skillName: "Python",
-    Image: "/python.png",
+    img: "/python.png",
     width: 70,
     height: 70,
   },
   {
     skillName: "JavaScript",
-    Image: "/js.png",
+    img: "/js.png",
     width: 65,
     height: 65,
   },
   {
     skillName: "TypeScript",
-    Image: "/ts.png",
+    img: "/ts.png",
     width: 80,
     height: 80,
   },
@@ -134,37 +177,37 @@ export const languages = [
 export const frontend = [
   {
     skillName: "HTML5",
-    Image: "/html.png",
+    img: "/html.png",
     width: 80,
     height: 80,
   },
   {
     skillName: "CSS3",
-    Image: "/css.png",
+    img: "/css.png",
     width: 80,
     height: 80,
   },
   {
     skillName: "TailwindCSS",
-    Image: "/tailwind.png",
+    img: "/tailwind.png",
     width: 80,
     height: 80,
   },
   {
     skillName: "MaterialUI",
-    Image: "/mui.png",
+    img: "/mui.png",
     width: 80,
     height: 80,
   },
   {
     skillName: "React",
-    Image: "/react.png",
+    img: "/react.png",
     width: 80,
     height: 80,
   },
   {
     skillName: "Next.js",
-    Image: "/next.png",
+    img: "/next.png",
     width: 80,
     height: 80,
   },
@@ -173,37 +216,37 @@ export const frontend = [
 export const backend = [
   {
     skillName: "Node.js",
-    Image: "/node-js.png",
+    img: "/node-js.png",
     width: 80,
     height: 80,
   },
   {
     skillName: "Express.js",
-    Image: "/express.png",
+    img: "/express.png",
     width: 80,
     height: 80,
   },
   {
     skillName: "Flask",
-    Image: "/flask.svg",
+    img: "/flask.svg",
     width: 80,
     height: 80,
   },
   // {
   //   skillName: "MongoDB",
-  //   Image: "/mongodb.png",
+  //   img: "/mongodb.png",
   //   width: 40,
   //   height: 40,
   // },
   // {
   //   skillName: "Firebase",
-  //   Image: "/Firebase.png",
+  //   img: "/Firebase.png",
   //   width: 55,
   //   height: 55,
   // },
   {
     skillName: "PostgresSQL",
-    Image: "/postgres.png",
+    img: "/postgres.png",
     width: 70,
     height: 70,
   },
@@ -212,25 +255,25 @@ export const backend = [
 export const dataScience = [
   {
     skillName: "Pandas",
-    Image: "/pandas.png",
+    img: "/pandas.png",
     width: 60,
     height: 60,
   },
   {
     skillName: "NumPy",
-    Image: "/numpy.svg",
+    img: "/numpy.svg",
     width: 60,
     height: 60,
   },
   {
     skillName: "Matplotlib",
-    Image: "/matplotlib.png",
+    img: "/matplotlib.png",
     width: 60,
     height: 60,
   },
   {
     skillName: "Scikit-Learn",
-    Image: "/scikit-learn.png",
+    img: "/scikit-learn.png",
     width: 60,
     height: 60,
   },
@@ -239,19 +282,19 @@ export const dataScience = [
 export const machineLearning = [
   {
     skillName: "PyTorch",
-    Image: "/pytorch.svg",
+    img: "/pytorch.svg",
     width: 60,
     height: 60,
   },
   {
     skillName: "TensorFlow",
-    Image: "/tensorflow.svg",
+    img: "/tensorflow.svg",
     width: 60,
     height: 60,
   },
   {
     skillName: "OpenCV",
-    Image: "/opencv.svg",
+    img: "/opencv.svg",
     width: 60,
     height: 60,
   },
@@ -260,31 +303,31 @@ export const machineLearning = [
 export const devTools = [
   {
     skillName: "Git",
-    Image: "/git.png",
+    img: "/git.png",
     width: 60,
     height: 60,
   },
   {
     skillName: "VSCode",
-    Image: "/vscode.png",
+    img: "/vscode.png",
     width: 60,
     height: 60,
   },
   {
     skillName: "Bash",
-    Image: "/bash.png",
+    img: "/bash.png",
     width: 60,
     height: 60,
   },
   {
     skillName: "Jupyter",
-    Image: "/jupyter.png",
+    img: "/jupyter.png",
     width: 60,
     height: 60,
   },
   {
     skillName: "Github",
-    Image: "/github.svg",
+    img: "/github.svg",
     width: 60,
     height: 60,
   },

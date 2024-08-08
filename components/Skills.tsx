@@ -19,7 +19,7 @@ const Skills = () => {
       {category.map((image, index) => (
         <SkillsAnimation
           key={`${prefix}-${index}`}
-          src={image.Image}
+          src={image.img}
           width={image.width}
           height={image.height}
           index={index}  // Add this line
