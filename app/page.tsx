@@ -5,7 +5,6 @@ import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import { Navbar } from "@/components/ui/Navbar";
 import { navItems } from "@/data";
-import { FaHome } from "react-icons/fa";
 
 export default function Home() {
   return (

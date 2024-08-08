@@ -8,8 +8,8 @@ const Footer = () => {
     <footer className='w-full pb-10 mb-[100px] md:mb-5' id='footer'>
 
       <div className='flex flex-col items-center z-20'>
-        <h1 className='heading lg:max-w-[45vw]:'>Text here</h1>
-        <p className='text-white-200 md:mt-10 my-5 text-center'>Text here</p>
+        {/* <h1 className='heading lg:max-w-[45vw]:'>Text here</h1>
+        <p className='text-white-200 md:mt-10 my-5 text-center'>Text here</p> */}
         <a href="mailto:jeremoon@umich.edu">
           <Button 
             title="Contact Me"

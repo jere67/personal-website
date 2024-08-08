@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image';
 
@@ -9,13 +9,14 @@ interface Props {
     src: string;
     width: number;
     height: number;
+    index: number;
     id: string;
     hoveredId?: string | null;
     setHoveredId: (id: string | null) => void;
     skillName: string;
 }
 
-const SkillsAnimation = ({ src, width, height, id, hoveredId, setHoveredId, skillName }: Props) => {
+const SkillsAnimation = ({ src, width, height, index, id, hoveredId, setHoveredId, skillName }: Props) => {
     const {ref, inView} = useInView({
         triggerOnce: true
     })
@@ -33,8 +34,8 @@ const SkillsAnimation = ({ src, width, height, id, hoveredId, setHoveredId, skil
             initial="hidden"
             variants={imageVariants}
             animate={inView ? "visible" : "hidden"}
-            custom={id}
-            transition={{delay: parseFloat(id) * animationDelay}}
+            custom={index}
+            transition={{delay: index * animationDelay}}
             className='relative group'
             onMouseEnter={() => setHoveredId(id)}
             onMouseLeave={() => setHoveredId(null)}
