@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { ClockIcon } from 'lucide-react'
+import { LinkPreview } from './LinkPreview'
 
 const CodingHours = () => {
   const [hours, setHours] = useState<number | null>(null)
@@ -26,7 +27,9 @@ const CodingHours = () => {
         <h2 className='font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10'>Coding hours</h2>
       </div>
       <div className='font-sans font-bold text-lg lg:text-3xl max-w-96 z-10'>
-        {hours === null ? '--' : `${hours} hrs`}
+        <LinkPreview url='https://wakatime.com/@jere67'>
+          {hours === null ? '--' : `${hours} hrs`}
+        </LinkPreview>
       </div>
     </div>
   )
