@@ -1,23 +1,23 @@
 'use client'
 
 import {
-  SiCloudflare,
   SiCss3,
+  SiExpress,
   SiFigma,
-  SiFirebase,
+  SiFlask,
   SiGit,
   SiHtml5,
   SiJavascript,
-  SiJest,
   SiMarkdown,
-  SiMysql,
+  SiMui,
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
-  SiPrisma,
   SiPython,
+  SiPytorch,
   SiReact,
   SiTailwindcss,
+  SiTensorflow,
   SiTypescript,
   SiVisualstudiocode,
   SiVite
@@ -40,16 +40,16 @@ const StacksCard = () => {
         <SiPostgresql className='size-10' />
       </Marquee>
       <Marquee gap='20px' className='py-4' reverse fade pauseOnHover>
-        <SiPrisma className='size-10' />
-        <SiMysql className='size-10' />
-        <SiFirebase className='size-10' />
+        <SiExpress className='size-10' />
+        <SiNodedotjs className='size-10' />
+        <SiFlask className='size-10' />
         <SiGit className='size-10' />
         <SiVite className='size-10' />
         <SiVisualstudiocode className='size-10' />
-        <SiCloudflare className='size-10' />
+        <SiMui className='size-10' />
         <SiMarkdown className='size-10' />
-        <SiJest className='size-10' />
-        <SiNodedotjs className='size-10' />
+        <SiTensorflow className='size-10' />
+        <SiPytorch className='size-10' />
       </Marquee>
     </div>
   )
