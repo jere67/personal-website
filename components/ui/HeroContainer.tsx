@@ -13,7 +13,7 @@ import AnimatedSignature from "./AnimatedSignature";
 import { FlipWords } from "./FlipWords";
 
 const HeroContent = () => {
-  const words = ["Software Engineer", "Tech Entrepreneur", "Data Scientist"]
+  const words = ["Software Engineer", "Tech Entrepreneur", "Data Scientist", "Machine Learning Engineer"]
 
   return (
     <motion.div initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-center px-20 mt-40 w-full h-full z-[20]">

@@ -28,6 +28,7 @@ export const FlipWords = ({
     "bg-clip-text text-transparent bg-gradient-to-r from-[#0077ff] to-[#00e7df]",
     "bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]",
     "bg-clip-text text-transparent bg-gradient-to-r from-[#7f00de] to-[#ff007f]",
+    "bg-clip-text text-transparent bg-gradient-to-r from-[#0077ff] to-[#00e7df]"
   ]
 
   useEffect(() => {
@@ -66,7 +67,7 @@ export const FlipWords = ({
           position: "absolute",
         }}
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+          "z-10 inline-block relative text-center md:text-start text-neutral-900 dark:text-neutral-100 px-2",
           className
         )}
         key={currentWord}
