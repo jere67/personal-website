@@ -76,7 +76,7 @@ export const projects = [
     des: "Gym.ai allows you to upload your own lifting videos and get personalized feedback on your exercise form.",
     img: "/gymai.png",
     iconLists: ["/re.svg", "/tail.svg", "/flask.svg"],
-    link: "Building...",
+    link: "youtu.be/TN9mMbScABs",
   },
   {
     id: 2,
@@ -84,7 +84,7 @@ export const projects = [
     des: "A website that allows users to track the top 10 cryptocurrencies by market cap. (Link loads slowly)",
     img: "/crypto-moon.png",
     iconLists: ["/ejs.svg", "/node.svg", "/express.svg"],
-    link: "blogmoon-f26g.onrender.com/",
+    link: "crypto-moon-uetp.onrender.com/",
   },
   {
     id: 3,

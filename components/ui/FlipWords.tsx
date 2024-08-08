@@ -13,14 +13,23 @@ export const FlipWords = ({
   className?: string;
 }) => {
   const [currentWord, setCurrentWord] = useState(words[0]);
+  const [curIndex, setCurIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   // thanks for the fix Julian - https://github.com/Julian-AT
   const startAnimation = useCallback(() => {
     const word = words[words.indexOf(currentWord) + 1] || words[0];
+    setCurIndex((curIndex + 1) % words.length);
     setCurrentWord(word);
     setIsAnimating(true);
   }, [currentWord, words]);
+
+  const otherClasses = [
+    "bg-clip-text text-transparent bg-gradient-to-r from-[#0077ff] to-[#00e7df]",
+    "bg-clip-text text-transparent bg-gradient-to-r from-[#ff1835] to-[#ffc900]",
+    "bg-clip-text text-transparent bg-gradient-to-r from-[#7f00de] to-[#ff007f]",
+    "bg-clip-text text-transparent bg-gradient-to-r from-[#0077ff] to-[#00e7df]"
+  ]
 
   useEffect(() => {
     if (!isAnimating)
@@ -72,7 +81,7 @@ export const FlipWords = ({
               delay: index * 0.08,
               duration: 0.4,
             }}
-            className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#0077ff] to-[#00e7df]"
+            className={`inline-block ${otherClasses[curIndex]}`}
           >
             {letter}
           </motion.span>
