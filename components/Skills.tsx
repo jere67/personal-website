@@ -1,3 +1,5 @@
+"use client"
+
 import {
   languages,
   frontend, 
@@ -6,10 +8,28 @@ import {
   machineLearning,
   devTools
 } from "@/data";
-import React from "react";
+import React, { useState } from "react";
 import SkillsAnimation from "./ui/SkillsAnimation";
 
 const Skills = () => {
+  let [hoveredId, setHoveredId] = useState<string | null>(null);
+
+  const renderSkillCategory = (category: any[], prefix: string) => (
+    <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      {category.map((image, index) => (
+        <SkillsAnimation
+          key={`${prefix}-${index}`}
+          src={image.Image}
+          width={image.width}
+          height={image.height}
+          id={`${prefix}-${index}`}
+          hoveredId={hoveredId}
+          setHoveredId={setHoveredId}
+        />
+      ))}
+    </div>
+  );
+
   return (
     <section
       id="skills"
@@ -23,72 +43,12 @@ const Skills = () => {
         </h1>
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {languages.map((image, index) => (
-          <SkillsAnimation
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {frontend.map((image, index) => (
-          <SkillsAnimation
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {backend.map((image, index) => (
-          <SkillsAnimation
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {dataScience.map((image, index) => (
-          <SkillsAnimation
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {machineLearning.map((image, index) => (
-          <SkillsAnimation
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {devTools.map((image, index) => (
-          <SkillsAnimation
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
+      {renderSkillCategory(languages, 'lang')}
+      {renderSkillCategory(frontend, 'front')}
+      {renderSkillCategory(backend, 'back')}
+      {renderSkillCategory(dataScience, 'data')}
+      {renderSkillCategory(machineLearning, 'ml')}
+      {renderSkillCategory(devTools, 'dev')}
     </section>
   );
 };
