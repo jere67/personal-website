@@ -7,10 +7,10 @@
 </h1>
 
 <p align="center">
+  <img alt="" src="https://img.shields.io/github/languages/top/jere67/personal-website?style=for-the-badge&labelColor=000">
   <a aria-label="Framework" href="https://nextjs.org">
     <img alt="" src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=Next.js&labelColor=000">
   </a>
-  <img alt="" src="https://img.shields.io/github/languages/top/jere67/personal-website?style=for-the-badge&labelColor=000">
   <a aria-label="License" href="https://github.com/jere67/personal-website/blob/main/LICENSE">
     <img alt="" src="https://img.shields.io/github/license/jere67/personal-website?style=for-the-badge&labelColor=000">
   </a>
@@ -29,7 +29,8 @@ Hello and welcome to my portfolio website! My name is Jeremy Moon, and I am a st
 - 🖼️ Autoplay Image Carousel
 - 📇 Interactive Project Cards
 - ⏱️ REST API routing with Wakatime API
-- 
+- 💠 Three.js for rendering 3D elements
+- 🖇️ Deployed with Vercel
 
 ## ✍🏻 Author
 
@@ -41,8 +42,11 @@ Please do not deploy this directly to production. It is not a template and is no
 
 This project is open source and available under the [GPL3 License](LICENSE).
 
-## 🤖 Changes to Make
+## 🤖 Improvements and Changes to Make
+- Responsiveness (Handling Outliers)
 - External About + Project Pages
-- Tracing Beam
-- Sentry
+- Tracing Beam for scrolling
 - Integrate Spotify API
+- Sentry for Analytics
+- Cleaner codebase
+- Adding a blog
