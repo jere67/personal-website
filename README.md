@@ -28,6 +28,7 @@ Hello and welcome to my portfolio website! My name is Jeremy Moon, and I am a st
 - 🌎 3D Globe
 - 🖼️ Autoplay Image Carousel
 - 📇 Interactive Project Cards
+- ☄️ Automatic Scroll Tracking with Tracing Beam 
 - ⏱️ REST API routing with Wakatime API
 - 💠 Three.js for rendering 3D elements
 - 🖇️ Deployed with Vercel
