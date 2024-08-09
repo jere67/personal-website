@@ -5,12 +5,13 @@ import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import { Navbar } from "@/components/ui/Navbar";
+import { TracingBeam } from "@/components/ui/TracingBeam";
 import { navItems } from "@/data";
 
 export default function Home() {
   return (
     <main className="relative bg-black flex justify-center items-center flex-col mx-auto sm:px-10 overflow-clip ">
-      <div className="max-w-7xl w-full">
+      <TracingBeam className="max-w-7xl w-full">
         <Navbar navItems={navItems}/>
         <Hero />
         <Grid />
@@ -18,7 +19,7 @@ export default function Home() {
         <Education />
         <Skills />
         <Footer />
-      </div>
+      </TracingBeam>
     </main>
   );
 }

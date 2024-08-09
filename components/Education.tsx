@@ -11,10 +11,10 @@ const Education = () => {
         </h1>
       </div>
 
-      <div className='flex flex-col md:flex-row items-center justify-center px-20 w-full h-full'>
-        <CardSpotlight className='h-full w-[50vw] flex flex-col gap-5 justify-center text-start z-20'>
+      <div className='flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden z-[20]'>
+        <CardSpotlight className='h-full flex items-center justify-center sm:w-[640px] w-[85vw] z-20'>
           <div className='z-30'>
-            <h1 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>University of Michigan—Ann Arbor</h1>
+            <h1 className='font-bold lg:text-2xl md:text-xl text-base'>University of Michigan—Ann Arbor</h1>
             <p className='lg:text-xl lg:font-normal font-light text-sm'>Bachelor of Science in Engineering in Data Science</p>
             <p className='lg:text-xl lg:font-normal font-light text-sm'>GPA: 3.96/4.00</p>
             <h2 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>Relevant Coursework</h2>
