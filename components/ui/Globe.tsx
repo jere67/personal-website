@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
+import { Color, Scene, Fog, PerspectiveCamera, Vector3, Mesh, SphereGeometry, MeshBasicMaterial, Object3D } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
@@ -58,6 +58,14 @@ interface WorldProps {
   data: Position[];
 }
 
+interface MarkerData {
+  lat: number;
+  lng: number;
+  color: string;
+  radius: number;
+  height: number;
+}
+
 let numbersOfRings = [0];
 
 export function Globe({ globeConfig, data }: WorldProps) {
@@ -71,6 +79,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
       }[]
     | null
   >(null);
+
+  const [markerData, setMarkerData] = useState<MarkerData[]>([]);
 
   const globeRef = useRef<ThreeGlobe | null>(null);
 
@@ -91,10 +101,23 @@ export function Globe({ globeConfig, data }: WorldProps) {
     ...globeConfig,
   };
 
+  // ~~ HERE IS THE PLACE TO ADJUST PIN AS NECESSARY ~~
+  const addMarker = () => {
+    const newMarkerData: MarkerData = {
+      lat: 42.2808,
+      lng: -83.7430,
+      color: 'white',
+      radius: 1.5,
+      height: 0,
+    };
+    setMarkerData([newMarkerData]);
+  };
+
   useEffect(() => {
     if (globeRef.current) {
       _buildData();
       _buildMaterial();
+      addMarker();
     }
   }, [globeRef.current]);
 
@@ -157,12 +180,35 @@ export function Globe({ globeConfig, data }: WorldProps) {
         .showAtmosphere(defaultProps.showAtmosphere)
         .atmosphereColor(defaultProps.atmosphereColor)
         .atmosphereAltitude(defaultProps.atmosphereAltitude)
-        .hexPolygonColor((e) => {
+        .hexPolygonColor(() => {
           return defaultProps.polygonColor;
         });
+      
+      // Add the marker to the globe
+      globeRef.current
+        .customLayerData(markerData)
+        .customThreeObject((d: object) => {
+          const markerData = d as MarkerData;
+          const sphere = new Mesh(
+            new SphereGeometry(markerData.radius),
+            new MeshBasicMaterial({ color: markerData.color })
+          );
+          sphere.position.set(0, 0, markerData.height);
+          return sphere;
+        })
+        .customThreeObjectUpdate((obj: Object3D, d: object) => {
+          const markerData = d as MarkerData;
+          if (globeRef.current) {
+            const coords = globeRef.current.getCoords(markerData.lat, markerData.lng, markerData.height);
+            if (coords) {
+              Object.assign(obj.position, coords);
+            }
+          }
+        });
+      
       startAnimation();
     }
-  }, [globeData]);
+  }, [globeData, markerData]);
 
   const startAnimation = () => {
     if (!globeRef.current || !globeData) return;

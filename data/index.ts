@@ -119,7 +119,7 @@ export const projects = [
     des: "Gym.ai allows you to upload your own lifting videos and get personalized feedback on your exercise form.",
     img: "/gymai.png",
     iconLists: ["/re.svg", "/tail.svg", "/flask.svg"],
-    link: "youtu.be/TN9mMbScABs",
+    link: "pitch.com/v/googlexmhacks-xtff53",
   },
   {
     id: 2,
