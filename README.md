@@ -46,7 +46,6 @@ This project is open source and available under the [GPL3 License](LICENSE).
 ## 🤖 Improvements and Changes to Make
 - Responsiveness (Handling Outliers)
 - External About + Project Pages
-- Tracing Beam for scrolling
 - Integrate Spotify API
 - Sentry for Analytics
 - Cleaner codebase

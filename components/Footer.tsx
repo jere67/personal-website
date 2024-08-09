@@ -2,6 +2,7 @@ import { socialMedia } from '@/data'
 import React from 'react'
 import Button from './Button'
 import { FaLocationArrow } from 'react-icons/fa6'
+import Spotify from './ui/Spotify'
 
 const Footer = () => {
   return (
@@ -19,6 +20,8 @@ const Footer = () => {
           />
         </a>
       </div>
+
+      <Spotify />
 
       <div className='flex mt-16 md:flex-row flex-col justify-between items-center z-[20]'>
         <p className='md:text-base text-sm md:font-normal font-light'>Copyright © {new Date().getFullYear()} Jeremy Moon</p>
