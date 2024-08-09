@@ -51,7 +51,6 @@ export async function GET() {
     }
 
     const song = await response.json()
-    console.log(song);
     return NextResponse.json({
       isPlaying: song.is_playing as boolean,
       songUrl: song.item.external_urls.spotify as string,
