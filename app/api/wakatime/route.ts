@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+export const fetchCache = 'force-no-store'
 
 export async function GET() {
   const API_KEY = process.env.WAKATIME_API_KEY

@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+export const fetchCache = 'force-no-store'
 
 const CLIENT_ID = process.env.SPOTIFY_CLIENT_ID
 const CLIENT_SECRET = process.env.SPOTIFY_CLIENT_SECRET
@@ -51,6 +52,7 @@ export async function GET() {
     }
 
     const song = await response.json()
+    console.log(song)
     return NextResponse.json({
       isPlaying: song.is_playing as boolean,
       songUrl: song.item.external_urls.spotify as string,
