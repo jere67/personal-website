@@ -30,6 +30,7 @@ Hello and welcome to my portfolio website! My name is Jeremy Moon, and I am a st
 - 📇 Interactive Project Cards
 - ☄️ Automatic Scroll Tracking with Tracing Beam 
 - ⏱️ REST API routing with Wakatime API
+- 🎵 Real Time Song Data with Spotify API
 - 💠 Three.js for rendering 3D elements
 - 🖇️ Deployed with Vercel
 
@@ -46,7 +47,6 @@ This project is open source and available under the [GPL3 License](LICENSE).
 ## 🤖 Improvements and Changes to Make
 - Responsiveness (Handling Outliers)
 - External About + Project Pages
-- Integrate Spotify API
 - Sentry for Analytics
 - Cleaner codebase
 - Adding a blog
