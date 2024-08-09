@@ -4,7 +4,7 @@ import { gridItems } from '@/data'
 
 const Grid = () => {
   return (
-    <section id="about">
+    <section id="about" data-aos="fade-up" data-aos-duration="500">
       <div className='pt-32 pb-12 z-[20]'>
         <h1 className='heading'>
           About {' '}

@@ -36,7 +36,9 @@ const Skills = () => {
     <section
       id="skills"
       className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-40 z-[20]"
-      style={{ transform: "scale(0.9" }}
+      style={{ transform: "scale(0.9)" }}
+      data-aos="fade-up"
+      data-aos-duration="500"
     >
       <div className='pt-8 pb-12 z-[20]'>
         <h1 className='heading'>

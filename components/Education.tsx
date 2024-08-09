@@ -3,7 +3,7 @@ import { CardSpotlight } from './ui/CardSpotlight'
 
 const Education = () => {
   return (
-    <section id='education'>
+    <section id='education' data-aos="fade-up" data-aos-duration="500">
       <div className='pb-12 z-[20]'>
         <h1 className='heading z-20'>
           My {' '}

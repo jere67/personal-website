@@ -5,7 +5,7 @@ import { FaGithub, FaLocationArrow } from 'react-icons/fa6'
 
 const Projects = () => {
   return (
-    <div className='py-20' id='projects'>
+    <div className='py-20' id='projects' data-aos="fade-up" data-aos-duration="500">
       <h1 className='heading'>
         Featured {' '}
         <span className='text-blue-300'>Projects</span>
