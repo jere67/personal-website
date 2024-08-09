@@ -11,7 +11,6 @@ const CodingHours = () => {
       try {
         const response = await fetch('/api/wakatime')
         const data = await response.json()
-        console.log(data)
         setHours(Math.round(data.total_seconds / 60 / 60))
       } catch (error) {
         console.error('Error fetching coding hours:', error)
