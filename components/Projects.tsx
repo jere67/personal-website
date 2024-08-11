@@ -2,6 +2,7 @@ import { projects } from '@/data'
 import React from 'react'
 import { PinContainer } from './ui/3d-pin'
 import { FaGithub, FaLocationArrow } from 'react-icons/fa6'
+import Button from './Button'
 
 const Projects = () => {
   return (
@@ -56,6 +57,17 @@ const Projects = () => {
             </PinContainer>
           </div>
         ))}
+      </div>
+
+      <div className='flex flex-col items-center z-20'>
+        <a href="/projects">
+          <Button
+            title="View All Projects"
+            icon={<FaLocationArrow />}
+            position='right'
+            otherClasses='z-20'
+          />
+        </a>
       </div>
     </div>
   )

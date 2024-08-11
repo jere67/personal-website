@@ -18,7 +18,7 @@ export default function Home() {
         <Projects />
         <Education />
         <Skills />
-        <Footer />
+        <Footer showContact={true} />
       </TracingBeam>
     </main>
   );

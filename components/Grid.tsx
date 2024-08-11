@@ -1,6 +1,8 @@
 import React from 'react'
 import { BentoGrid, BentoGridItem } from './ui/BentoGrid'
 import { gridItems } from '@/data'
+import Button from './Button'
+import { FaLocationArrow } from 'react-icons/fa6'
 
 const Grid = () => {
   return (
@@ -27,6 +29,16 @@ const Grid = () => {
             />
         ))}
       </BentoGrid>
+      <div className='flex flex-col items-center z-20'>
+        <a href="/about">
+          <Button 
+            title="Know more about me"
+            icon={<FaLocationArrow />}
+            position='right'
+            otherClasses='z-20'
+          />
+        </a>
+      </div>
     </section>
   )
 }
