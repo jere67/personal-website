@@ -36,7 +36,7 @@ export const cards = [
     description: "Web Application",
     title: "Personal Website",
     src: "/personal_website.png",
-    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Three.js"],
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Three.js", "Aceternity UI"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/personal-website",
     demoText: "Here!",

@@ -163,14 +163,14 @@ export const languages = [
   {
     skillName: "JavaScript",
     img: "/js.png",
-    width: 65,
-    height: 65,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "TypeScript",
     img: "/ts.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
 ];
 
@@ -178,38 +178,44 @@ export const frontend = [
   {
     skillName: "HTML5",
     img: "/html.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "CSS3",
     img: "/css.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "TailwindCSS",
     img: "/tailwind.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "MaterialUI",
     img: "/mui.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
+  },
+  {
+    skillName: "AceternityUI",
+    img: "/aceternity.png",
+    width: 70,
+    height: 70,
   },
   {
     skillName: "React",
     img: "/react.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Next.js",
     img: "/next.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
 ];
 
@@ -217,20 +223,20 @@ export const backend = [
   {
     skillName: "Node.js",
     img: "/node-js.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Express.js",
     img: "/express.png",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Flask",
     img: "/flask.svg",
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
   },
   // {
   //   skillName: "MongoDB",
@@ -256,26 +262,26 @@ export const dataScience = [
   {
     skillName: "Pandas",
     img: "/pandas.png",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "NumPy",
     img: "/numpy.svg",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Matplotlib",
     img: "/matplotlib.png",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Scikit-Learn",
     img: "/scikit-learn.png",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
 ];
 
@@ -283,20 +289,20 @@ export const machineLearning = [
   {
     skillName: "PyTorch",
     img: "/pytorch.svg",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "TensorFlow",
     img: "/tensorflow.svg",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "OpenCV",
     img: "/opencv.svg",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
 ];
 
@@ -304,32 +310,32 @@ export const devTools = [
   {
     skillName: "Git",
     img: "/git.png",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "VSCode",
     img: "/vscode.png",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Bash",
     img: "/bash.png",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Jupyter",
     img: "/jupyter.png",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
   {
     skillName: "Github",
     img: "/github.svg",
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
   },
 ];
 
