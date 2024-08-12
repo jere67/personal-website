@@ -10,7 +10,7 @@ const About = () => {
         <h2 className="text-3xl font-semibold mb-6">Who Am I</h2>
         <p className="text-lg mb-4">I am a highly disciplined and results-oriented software engineer, eager to apply my skills to high-impact projects to optimize, grow, and deliver exceptional outcomes.</p>
         <p className="text-lg mb-4">I am passionate about emerging technologies in <span className='font-bold'>Data Science</span> and <span className='font-bold'>Machine Learning</span>. Recently, I took an interest in <span className='font-bold'>Web Development</span>, so I have worked on this website to learn more about TypeScript, Next.js, React.js, and more. </p>
-        <p className="text-lg mb-4">When I'm not at the computer, you'll catch me in the gym lifting weights or boxing.</p>
+        <p className="text-lg mb-4">When I&apos;m not at the computer, you&apos;ll catch me in the gym lifting weights or boxing.</p>
       </div>
     </div>
   )
