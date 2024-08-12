@@ -7,7 +7,7 @@ export const cards = [
     codeText: "Code",
     codeLink: "/",
     demoText: "Building...",
-    demoLink: "pitch.com/v/googlexmhacks-xtff53",
+    demoLink: "https://pitch.com/v/googlexmhacks-xtff53",
     content: "Using Google's novel Gemini 1.5 Pro technology, Gym.ai revolutionizes the way you train. With cutting-edge AI analysis, Gym.ai allows individuals to upload their own lifting videos and get personalized feedback on your exercise form. It can help you optimize your workouts, prevent injuries, and reach your fitness goals faster."
   },
   {
@@ -28,7 +28,7 @@ export const cards = [
     technologies: ["Python", "PyTorch", "EfficientNet-B5"],
     codeText: "N/A",
     codeLink: "/projects",
-    demoText: "Not Deployed",
+    demoText: "View Report",
     demoLink: "https://docs.google.com/presentation/d/1dPoYFZlxFjBm6SLyaRf9dglWmkp154A-kizWcP0N7Hk/edit?usp=sharing",
     content: "Built and trained an EfficientNet-B5-based CNN model on a dataset of 140,000 face images, achieving a 97% validation accuracy in detecting photoshopped images. Enhanced model performance and accuracy through meticulous data preprocessing and augmentation techniques, including color jitter and random horizontal/vertical flips, resulting in a 14% improvement in validation accuracy. Utilized the Grad-CAM visualization technique to identify key facial features used by the model, then using that data to continuously optimize performance by fine-tuning the model's hyperparameters."
   },
