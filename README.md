@@ -20,18 +20,19 @@ Hello and welcome to my portfolio website! My name is Jeremy Moon, and I am a st
 
 ## ⭐ Features
 - ⚡️ Next.js 14 with App Router
+- 🛜 Server and Client Side Rendering
 - 🎨 Tailwind CSS - for modern styling
 - 🃏 Aceternity UI - accessible UI components
 - 🛡 Strict TypeScript and ESLint configuration
 - 📱 Fully Responsive
-- 🎨 Animation - using Framer Motion
+- 💠 Three.js for rendering 3D elements
 - 🌎 3D Globe
+- 🎨 Animation - using Framer Motion
 - 🖼️ Autoplay Image Carousel
 - 📇 Interactive Project Cards
 - ☄️ Automatic Scroll Tracking with Tracing Beam 
 - ⏱️ REST API routing with Wakatime API
 - 🎵 Real Time Song Data with Spotify API
-- 💠 Three.js for rendering 3D elements
 - 🖇️ Deployed with Vercel
 
 ## ✍🏻 Author
@@ -46,7 +47,6 @@ This project is open source and available under the [GPL3 License](LICENSE).
 
 ## 🤖 Improvements and Changes to Make
 - Responsiveness (Handling Outliers)
-- External About + Project Pages
 - Sentry for Analytics
 - Cleaner codebase
 - Adding a blog
