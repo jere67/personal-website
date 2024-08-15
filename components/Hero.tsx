@@ -5,6 +5,7 @@ import { TextGenerateEffect } from './ui/TextGenerateEffect'
 import Button from './Button'
 import { FaLocationArrow } from 'react-icons/fa6'
 import HeroContent from './ui/HeroContainer'
+import Image from 'next/image'
 
 const Hero = () => {
   return (
@@ -40,9 +41,13 @@ const Hero = () => {
     // </div>
 
     <div className='pb-20 pt-36 relative flex flex-col h-screen w-full'>
-      <img 
+      <Image 
         className='rotate-180 absolute top-[-500px] left-0 z-[1] w-[98vw] h-[98vh] object-cover' 
         src='/moon.jpg'
+        alt='Moon'
+        width={500}
+        height={500}
+        unoptimized
       />
       {/* <video autoPlay muted loop className='rotate-180 absolute top-[-440px] left-0 z-[1] w-full h-full object-cover'>
         <source src='/moon.webm' type='video/webm'/>

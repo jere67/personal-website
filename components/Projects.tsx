@@ -3,6 +3,7 @@ import React from 'react'
 import { PinContainer } from './ui/3d-pin'
 import { FaGithub, FaLocationArrow } from 'react-icons/fa6'
 import Button from './Button'
+import Image from 'next/image'
 
 const Projects = () => {
   return (
@@ -18,13 +19,16 @@ const Projects = () => {
           <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw] z-[20]'>
             <PinContainer title={link} href={link} >
               <div className='relative flex items-center justify-center sm:w-[570px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh] mb-10'>
-                <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
+                {/* <div className='relative w-full h-full overflow-hidden lg:rounded-3xl bg-[#13162d]'>
                   <img src="./bg.png" alt="bg-img"/>
-                </div>
-                <img 
+                </div> */}
+                <Image 
                   src={img}
                   alt={title}
-                  className='z-10 absolute bottom-0 rounded-3xl h-full'
+                  className='z-10 absolute bottom-0 rounded-3xl w-full h-full'
+                  width={0}
+                  height={0}
+                  unoptimized
                 />
               </div>
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
@@ -39,7 +43,7 @@ const Projects = () => {
                 <div className='flex items-center'>
                   {iconLists.map((icon, index) => (
                     <div key={icon} className='border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center' style={{transform: `translateX(-${5 * index * 2}px)`}}>
-                      <img src={icon} alt={icon} className='p-2'/>
+                      <Image src={icon} alt={icon} className='p-2' width={100} height={100} sizes='100vw' />
                     </div>  
                   ))}
                 </div>

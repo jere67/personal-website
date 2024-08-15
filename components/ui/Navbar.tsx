@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
+import Image from "next/image";
 
 export const Navbar = ({
   navItems,
@@ -62,7 +63,7 @@ export const Navbar = ({
       >
 
         <a href="#" className="">
-          <img className="bi mx-auto mb-1 d-none d-lg-block" width="24" height="24" src="./moon.svg"/>
+          <Image className="bi mx-auto mb-1 d-none d-lg-block" width="24" height="24" src="./moon.svg" alt="moon"/>
         </a>
         {navItems.map((navItem: any, idx: number) => (
           <Link

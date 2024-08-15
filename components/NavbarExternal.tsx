@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { HoveredLink, Menu, MenuItem, ProductItem } from "./ui/NavbarWithMenu";
 import { cn } from "@/utils/cn";
+import Image from "next/image";
 
 export function NavbarExternal() {
   return (
@@ -19,7 +20,7 @@ function Navbar({ className }: { className?: string }) {
     >
       <Menu setActive={setActive}>
         <a href="/" className="relative mr-auto">
-          <img className="" width="24" height="24" src="./moon.svg"/>
+          <Image className="" width="24" height="24" src="./moon.svg" alt="moon"/>
         </a>
         <MenuItem setActive={setActive} active={active} item="About">
           <div className="flex flex-col space-y-4 text-sm">
