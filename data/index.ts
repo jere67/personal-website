@@ -115,6 +115,14 @@ export const images = [
 export const projects = [
   {
     id: 1,
+    title: "SpeechMaps",
+    des: "An AI-powered voice interface for crash detection and optimized route rerouting.",
+    img: "/speechmaps.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/groq.webp"],
+    link: "speechmaps.vercel.app",
+  },
+  {
+    id: 2,
     title: "Gym.ai",
     des: "Gym.ai allows you to upload your own lifting videos and get personalized feedback on your exercise form.",
     img: "/gymai.png",
@@ -122,7 +130,7 @@ export const projects = [
     link: "pitch.com/v/googlexmhacks-xtff53",
   },
   {
-    id: 2,
+    id: 3,
     title: "Crypto Moon",
     des: "A website that allows users to track the top 10 cryptocurrencies by market cap. (Link loads slowly)",
     img: "/crypto-moon.png",
@@ -130,20 +138,12 @@ export const projects = [
     link: "crypto-moon-uetp.onrender.com/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Real vs. Fake Face Detector",
     des: "A trained EfficientNet-B5 model to determine whether a picture of a face is fake or not.",
     img: "/rvf.png",
     iconLists: ["/python.svg", "/pytorch.svg"],
     link: "docs.google.com/presentation/d/1dPoYFZlxFjBm6SLyaRf9dglWmkp154A-kizWcP0N7Hk/edit?usp=sharing",
-  },
-  {
-    id: 4,
-    title: "Personal Website",
-    des: "A website that showcases who I am and some of my proudest work and achievements.",
-    img: "/personal_website.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg"],
-    link: "jeremymoon.dev",
   },
 ];
 
