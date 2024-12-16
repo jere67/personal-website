@@ -19,10 +19,12 @@ const Education = () => {
             <p className='lg:text-xl lg:font-normal font-light text-sm'>GPA: 3.96/4.00</p>
             <h2 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>Relevant Coursework</h2>
             <ul>
-              <li>EECS 281 - Data Structures and Algorithms <em>(Current)</em></li>
-              <li>EECS 376 - Foundations of Computer Science <em>(Current)</em></li>
-              <li>EECS 203 - Discrete Mathematics</li>
+              <li>EECS 398 - Practical Data Science <em>(Current)</em></li>
+              <li>EECS 376 - Foundations of Computer Science</li>
+              <li>EECS 281 - Data Structures and Algorithms</li>
               <li>EECS 280 - Programming (OOP) and Intro Data Structures</li>
+              <li>EECS 203 - Discrete Mathematics</li>
+              <li>MATH 217 - Linear Algebra</li>
               <li>Calculus 1, 2, 3</li>
             </ul>
             <h2 className='font-bold lg:text-2xl md:text-xl text-base line-clamp-1'>Activities</h2>
