@@ -2,13 +2,13 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "SpeechMaps",
-    src: "",
+    src: "/speechmaps.png",
     technologies: ["Groq AI", "Next.js", "Tailwind CSS", "TypeScript"],
     codeText: "Code",
     codeLink: "/",
     demoText: "Building...",
     demoLink: "https://pitch.com/v/googlexmhacks-xtff53",
-    content: "An AI-powered voice interface for crash detection and optimized route rerouting."
+    content: "SpeechMaps is an innovative navigation solution that optimizes your travel routes by dynamically reconfiguring them with AI based on real-time traffic incidents. Unlike conventional GPS applications that may not promptly update route conditions, SpeechMaps allows users to report accidents directly through voice input, ensuring immediate updates to avoid congested or blocked areas and uploading the incident for all users to see who are connected to the SpeechMaps network."
   },
   {
     description: "Web Application",
@@ -118,13 +118,13 @@ export const machineLearning = [
   {
     description: "Machine Learning",
     title: "Piazza Topic Classifier",
-    src: "",
+    src: "/piazza.png",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
     demoText: "N/A",
     demoLink: "/projects",
-    content: ""
+    content: "Automatically classifying posts from the EECS 280 Piazza forum using natural language processing and machine learning techniques. Essential data structures such as binary search trees and maps were implemented, alongside the application of recursion, function objects, templates, and custom comparators. The solution efficiently identifies the subject of posts by analyzing their content and utilizing a bag-of-words model within a supervised learning framework."
   },
 ];
 
@@ -132,57 +132,57 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "Pokemon",
-    src: "",
+    src: "/pokemon.jpg",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
     demoText: "N/A",
     demoLink: "/projects",
-    content: ""
+    content: "Implemented algorithms to solve the Traveling Salesman Problem (TSP) in a graph represented by x-y coordinates, utilizing a branch and bound method for optimal solutions and exploring the farthest insertion heuristic for near-optimal results. Calculated optimal paths and connections between vertices, ensuring minimal total edge weight by leveraging appropriate data structures and Prim's Algorithm. These methods collectively addressed the challenge of efficiently finding both exact and approximate solutions to TSP within given performance constraints."
   },
   {
     description: "Computer Science",
     title: "281Bank",
-    src: "",
+    src: "/bank.png",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
     demoText: "N/A",
     demoLink: "/projects",
-    content: ""
+    content: "Designed and implemented a real-time bank wire transfer simulator for 281Bank, leveraging multiple data structures for efficient processing of accounts, transactions, and queries. The simulator supports various operations such as user login/logout, balance checks, and placing transactions, while ensuring fraud detection and real-time gross settlements. It handles complex transaction scenarios with transaction fees, loyalty discounts, and unique query functionalities. Emphasized the selection of appropriate data structures, runtime and storage optimization, and real-time transaction integrity, with the ability to process operations efficiently even under high load while ensuring accurate and secure transaction records."
   },
   {
     description: "Computer Science",
     title: "Stock Simulator",
-    src: "",
+    src: "/stock.jpg",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
     demoText: "N/A",
     demoLink: "/projects",
-    content: ""
+    content: "Designed and implemented a real-time stock market simulator using priority queues and deques for efficient data handling and market trend analysis. Acquired skills in stream-based algorithms and running median calculations, enabling the identification of optimal trading strategies in different market conditions."
   },
   {
     description: "Computer Science",
     title: "Back To The Ship",
-    src: "",
+    src: "/maze.jpg",
     technologies: ["C++", "Depth First Search (DFS)", "Breadth First Search (BFS)"],
     codeText: "N/A",
     codeLink: "/projects",
     demoText: "N/A",
     demoLink: "/projects",
-    content: ""
+    content: "Created a maze-solver to navigate a 3D maze on a space station using breadth-first search (BFS) and depth-first search (DFS) algorithms with a focus on map and coordinate list mode input/output. Implemented BFS and DFS using a search container, handling command-line arguments with getopt_long(), and validating input. The maze included walls, floors, starting and ending points, and elevators that connect different levels. Generated the appropriate path from the starting location to the spacecraft hangar by marking the route taken in the specified format. Emphasized efficient algorithm implementation, error checking, and good coding practices."
   },
   {
     description: "Computer Science",
     title: "Emacs Clone",
-    src: "",
+    src: "/emacs.png",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
     demoText: "N/A",
     demoLink: "/projects",
-    content: ""
+    content: "Developed a terminal-based text editor utilizing doubly-linked lists for efficient text manipulation. Implemented dynamic memory management and iterator functionality to support features like cursor movement, text insertion, and deletion. Built and test a TextBuffer class, ensuring robust performance through unit testing and interactive debugging, ultimately creating a functional, efficient text editor from scratch."
   },
   {
     description: "Computer Science",
