@@ -71,8 +71,8 @@ export const BentoGridItem = ({
         className
       )}
       style={{
-        background: "rgb(4, 7, 29)",
-        backgroundColor: "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)"
+        background: "rgb(0, 0, 0)",
+        backgroundColor: "rgb(0, 0, 0)"
       }}
     >
       <div className={`${id === 6} && 'flex-justify-center h-full' `}>
@@ -85,7 +85,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        <div className={`absolute right-0 -bottom-5 ${id === 5 && 'w-full opacity-80'}`}>
+        {/* <div className={`absolute right-0 -bottom-5 ${id === 5 && 'w-full opacity-80'}`}>
           {spareImg && (
             <img 
               src={spareImg}
@@ -93,7 +93,7 @@ export const BentoGridItem = ({
               className={'object-cover, object-center w-full h-full'}
             />
           )}
-        </div>
+        </div> */}
 
         <div className={cn(
           titleClassName, 'group-hover/bento:translate-x-2 transition duration-200 relative md:h-full min-h-40 flex flex-col px-5 p-5 lg:p-10'
@@ -105,9 +105,47 @@ export const BentoGridItem = ({
           <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
             {title}
           </div>
-        {id === 1 && (
-          <img className="mx-auto relative overflow-hidden py-3 px-4 h-96" src="/umich.png"/>
-        )}
+
+          {id === 1 && (
+            <div className="flex-grow flex items-center justify-center w-full h-full mt-4 overflow-hidden">
+              <Carousel
+                className="w-full h-full"
+                opts={{ loop: true }}
+                plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
+                setApi={setApi}
+              >
+                <CarouselContent className="h-full">
+                  {images.map((image) => (
+                    <CarouselItem key={image.id} className="h-full basis-full">
+                      <div className="flex items-center justify-center w-full h-full p-2">
+                        <img
+                          src={image.img}
+                          className="rounded-lg object-contain max-w-full max-h-full"
+                          alt={`Carousel Image ${image.id}`}
+                          loading="lazy"
+                        />
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-20 text-white text-3xl cursor-pointer hover:text-gray-300 bg-black/30 rounded-full p-1" />
+                <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-20 text-white text-3xl cursor-pointer hover:text-gray-300 bg-black/30 rounded-full p-1" />
+                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                  {scrollSnaps.map((_, index) => (
+                    <button
+                      key={index}
+                      aria-label={`Go to slide ${index + 1}`}
+                      onClick={() => onDotButtonClick(index)}
+                      className={`
+                        w-2 h-2 rounded-full transition-colors duration-300
+                        ${ index === selectedIndex ? 'bg-white' : 'bg-gray-500/80 hover:bg-gray-400' }
+                      `}
+                    />
+                  ))}
+                </div>
+              </Carousel>
+            </div>
+          )}
 
         {id === 2 && (
           // TODO: Add a pinpoint to current location
@@ -115,74 +153,14 @@ export const BentoGridItem = ({
         )}
 
         {id === 3 && (
-          <Carousel 
-          className="flex items-center justify-center px-3 lg:-my-16 w-full"
-          opts={{
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 3000,
-            }),
-          ]}
-          setApi={setApi}
-        >
-          <CarouselContent>
-            {images.map((image) => (
-              <CarouselItem key={image.id}>
-                <div className="flex items-center justify-center lg:pt-10 h-full">
-                  <img src={image.img} className="rounded-lg" />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-5 lg:left-[-1.75rem] text-white text-4xl cursor-pointer" />
-          <CarouselNext className="absolute right-5 lg:right-[-1.75rem] text-white text-4xl cursor-pointer" />
-          <div className="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {scrollSnaps.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => onDotButtonClick(index)}
-                className={`
-                  w-3 h-3 rounded-full
-                  transition-all duration-300
-                  ${
-                    index === selectedIndex
-                      ? 'bg-white scale-125'
-                      : 'bg-gray-400 hover:bg-gray-300'
-                  }
-                `}
+            <div className="flex flex-grow items-center justify-center lg:-mt-10">
+              <img
+                className="w-auto h-auto max-w-[70%] max-h-[70%] object-contain"
+                src="/umich.png"
+                alt="University of Michigan Logo"
               />
-            ))}
-          </div>
-        </Carousel>
-          // Old Social Div
-          // <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-          //   <div className="flex flex-col gap-3 lg:gap-8">
-          //     {['GitHub'].map
-          //     ((item) => (
-          //       <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]">
-          //         {item}
-          //       </span>
-                
-          //     ))}
-          //     <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
-          //     <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
-          //   </div>
-
-          //   <div className="flex flex-col gap-3 lg:gap-8">
-          //     <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
-          //     {['LinkedIn'].map
-          //     ((item) => (
-          //       <span key={item} className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132e]">
-          //         {item}
-          //       </span>
-                
-          //     ))}
-          //     <span className="py-4 px-3 rounded-lg text-center bg-[#10132e]"/>
-          //   </div>
-          // </div>
-        )}
+            </div>
+          )}
 
         {id === 4 && (
           <StacksCard />
