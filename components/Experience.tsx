@@ -87,7 +87,7 @@ const Experience = () => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}
                     whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ amount: 0.5 }}
                     transition={{ duration: 0.5 }}
                     className="h-16 w-16 rounded-full z-40 relative overflow-hidden p-1 bg-white"
                   >
@@ -97,6 +97,7 @@ const Experience = () => {
                       width={64}
                       height={64}
                       className="w-full h-full object-contain"
+                      priority={index < 2}
                     />
                   </motion.div>
                 </div>
@@ -104,9 +105,9 @@ const Experience = () => {
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
+                  viewport={{ amount: 0.3 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="flex-1"
+                  className="flex-1 min-w-0"
                 >
                   <h2 className="text-3xl md:text-4xl font-bold mb-3">{card.company}</h2>
                   <h3 className="text-xl md:text-2xl font-bold mb-3">{card.title}</h3>
