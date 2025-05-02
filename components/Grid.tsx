@@ -9,8 +9,8 @@ const Grid = () => {
     <section id="about" className='relative overflow-hidden z-[20]' data-aos="fade-up" data-aos-duration="500">
       <div className='pt-32 pb-12 z-[20]'>
         <h1 className='heading'>
-          About {' '}
-          <span className='text-blue-300'>Me</span>
+          About {' '} Me
+          {/* <span className='text-blue-300'>Me</span> */}
         </h1>
       </div>
       <BentoGrid>
