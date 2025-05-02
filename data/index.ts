@@ -115,6 +115,22 @@ export const images = [
 export const projects = [
   {
     id: 1,
+    title: "AIMS Lab Showcase Website",
+    des: "The official website for the Artificial Intelligence and Multiphysics Simulations (AIMS) lab.",
+    img: "/aims-website.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
+    link: "#", // TODO: REPLACE WHEN WEBSITE IS DEPLOYED
+  },
+  {
+    id: 2,
+    title: "Social Media Sentiment Analysis Dashboard",
+    des: "Real Time Sentiment Analysis for Clean Energy Transition with Large Language Models",
+    img: "/SocialMedia.png",
+    iconLists: ["/re.svg", "/python.svg", "/fastapi.svg", "/huggingface.svg", "sqlite.svg"],
+    link: "courses.lsa.umich.edu/urop-symposium/symposium-presentati/enabling-real-time-sentiment-analysis-for-clean-energy-transition-with-large-language-models/", // TODO: REPLACE WHEN WEBSITE IS DEPLOYED
+  },
+  {
+    id: 3,
     title: "SpeechMaps",
     des: "An AI-powered voice interface for crash detection and optimized route rerouting.",
     img: "/speechmaps.png",
@@ -122,28 +138,12 @@ export const projects = [
     link: "speechmaps.vercel.app",
   },
   {
-    id: 2,
-    title: "Gym.ai",
-    des: "Gym.ai allows you to upload your own lifting videos and get personalized feedback on your exercise form.",
-    img: "/gymai.png",
-    iconLists: ["/re.svg", "/tail.svg", "/flask.svg"],
-    link: "pitch.com/v/googlexmhacks-xtff53",
-  },
-  {
-    id: 3,
-    title: "Crypto Moon",
-    des: "A website that allows users to track the top 10 cryptocurrencies by market cap. (Link loads slowly)",
-    img: "/crypto-moon.png",
-    iconLists: ["/ejs.svg", "/node.svg", "/express.svg"],
-    link: "crypto-moon-uetp.onrender.com/",
-  },
-  {
     id: 4,
-    title: "Real vs. Fake Face Detector",
-    des: "A trained EfficientNet-B5 model to determine whether a picture of a face is fake or not.",
-    img: "/rvf.png",
-    iconLists: ["/python.svg", "/pytorch.svg"],
-    link: "docs.google.com/presentation/d/1dPoYFZlxFjBm6SLyaRf9dglWmkp154A-kizWcP0N7Hk/edit?usp=sharing",
+    title: "Who is the ATP Superstar?",
+    des: "Data analysis and HistGradientBoostingClassifier model to predict ATP tour match outcomes with 92.01% accuracy.",
+    img: "/roger-federer.jpg",
+    iconLists: ["/python.svg", "/pandas.png", "/numpy.svg", "/scikit-learn.png"],
+    link: "pvarshh.github.io/tennis-prediction/",
   },
 ];
 

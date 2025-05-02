@@ -9,12 +9,11 @@ const Projects = () => {
   return (
     <div className='py-20 relative overflow-hidden z-[20]' id='projects' data-aos="fade-up" data-aos-duration="500">
       <h1 className='heading'>
-        Featured {' '}
-        <span className='text-blue-300'>Projects</span>
+        Featured {' '} Projects
+        {/* <span className='text-blue-300'>Projects</span> */}
       </h1>
 
-      {/* TODO: Fit Project images better to card */}
-      <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8 mt-10'>
+      <div className='flex flex-wrap items-center justify-center p-4 gap-x-24 gap-y-8'>
         {projects.map(({ id, title, des, img, iconLists, link }) => (
           <div key={id} className='sm:h-[41rem] h-[32rem] lg:min-h-[32.5rem] flex items-center justify-center sm:w-[570px] w-[90vw] z-[20]'>
             <PinContainer title={link} href={link} >
