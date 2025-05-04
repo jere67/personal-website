@@ -19,7 +19,7 @@ const HeroContent = () => {
     <motion.div initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-center px-20 mt-40 w-full h-full z-[20]">
       <div className="h-full w-full flex flex-col gap-5 justify-center text-center md:text-start">
         <TextGenerateEffect
-          className='flex flex-col gap-6 mt-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto' 
+          className='flex flex-col gap-6 mt-6 text-3xl lg:text-6xl font-bold text-white max-w-[600px] w-auto h-auto' 
           words='Hi, my name is Jeremy Moon' // color turns purple on starting on 4th index 
         />
 
