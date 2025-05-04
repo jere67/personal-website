@@ -106,7 +106,7 @@ const SkillCategoryBox: React.FC<SkillCategoryBoxProps> = ({
         </h3>
         <button
           aria-label={isExpanded ? "Collapse section" : "Expand section"}
-          className="text-cyan-400 hover:text-cyan-300 transition-colors p-1 rounded-full hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black"
+          className="text-white transition-colors p-1 rounded-full hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
         >
           {isExpanded ? <CloseIcon className="w-5 h-5 md:w-6 md:h-6" /> : <PlusIcon className="w-5 h-5 md:w-6 md:h-6" />}
         </button>
