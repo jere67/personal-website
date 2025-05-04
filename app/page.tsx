@@ -15,8 +15,8 @@ export default function Home() {
       <TracingBeam className="max-w-7xl w-full">
         <Navbar navItems={navItems}/>
         <Hero />
-        <Experience />
         <Grid />
+        <Experience />
         <Projects />
         <Education />
         <Skills />
