@@ -141,7 +141,7 @@ const SkillCategoryBox: React.FC<SkillCategoryBoxProps> = ({
                     className="object-contain max-h-full max-w-full"
                   />
                 </div>
-                <p className="text-xs md:text-sm text-gray-300 group-hover:text-cyan-400 transition-colors">
+                <p className="text-xs md:text-sm text-white transition-colors">
                   {skill.skillName}
                 </p>
               </a>
