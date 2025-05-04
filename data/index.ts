@@ -124,7 +124,7 @@ export const projects = [
   {
     id: 2,
     title: "Social Media Sentiment Analysis Dashboard",
-    des: "Real Time Sentiment Analysis for Clean Energy Transition with Large Language Models",
+    des: "Real time sentiment analysis for clean energy transition with large language models.",
     img: "/SocialMedia.png",
     iconLists: ["/re.svg", "/python.svg", "/fastapi.svg", "/huggingface.svg", "sqlite.svg"],
     link: "courses.lsa.umich.edu/urop-symposium/symposium-presentati/enabling-real-time-sentiment-analysis-for-clean-energy-transition-with-large-language-models/", // TODO: REPLACE WHEN WEBSITE IS DEPLOYED
