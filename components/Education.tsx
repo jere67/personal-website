@@ -20,7 +20,7 @@ const Education = () => {
       "EECS 203 - Discrete Mathematics",
       "EECS 201 - Computer Science Pragmatics (Scheduled)",
       "MATH 217 - Linear Algebra",
-      "STATS 412 - Introduction to Probability and Statistics",
+      "STATS 412 - Introduction to Probability and Statistics (Scheduled)",
       "Calculus 1, 2, 3",
     ],
     activities: [
