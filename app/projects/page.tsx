@@ -9,7 +9,7 @@ export default function Home() {
     <main className="relative bg-black flex justify-center items-center flex-col mx-auto sm:px-10 overflow-clip ">
       <TracingBeam>
         <NavbarExternal />
-        <div className="container mx-auto px-4 pt-8">
+        <div className="relative container mx-auto px-4 pt-8 z-30">
           <Projects />
           <Footer showContact={false} />
         </div>
