@@ -1,13 +1,24 @@
 export const webApplications = [
   {
     description: "Web Application",
+    title: "AIMS Website",
+    src: "/aims-website.png",
+    technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
+    codeText: "Code",
+    codeLink: "https://github.com/jere67/aims-website",
+    demoText: "Building...",
+    demoLink: "/",
+    content: "The official website for the Artificial Intelligence and Multiphysics Simulations (AIMS) lab."
+  },
+  {
+    description: "Web Application",
     title: "SpeechMaps",
     src: "/speechmaps.png",
     technologies: ["Groq AI", "Next.js", "Tailwind CSS", "TypeScript"],
     codeText: "Code",
-    codeLink: "/",
-    demoText: "Building...",
-    demoLink: "https://pitch.com/v/googlexmhacks-xtff53",
+    codeLink: "https://github.com/jere67/speechmaps",
+    demoText: "Live Demo",
+    demoLink: "https://speechmaps.vercel.app/",
     content: "SpeechMaps is an innovative navigation solution that optimizes your travel routes by dynamically reconfiguring them with AI based on real-time traffic incidents. Unlike conventional GPS applications that may not promptly update route conditions, SpeechMaps allows users to report accidents directly through voice input, ensuring immediate updates to avoid congested or blocked areas and uploading the incident for all users to see who are connected to the SpeechMaps network."
   },
   {
@@ -81,7 +92,18 @@ export const webApplications = [
 export const dataScience = [
   {
     description: "Data Science",
-    title: "College Football Predictive Modelling",
+    title: "Who is the ATP Superstar?",
+    src: "/roger-federer.jpg",
+    technologies: ["Python", "Pandas", "Numpy", "Plotly", "Scikit-learn"],
+    codeText: "Code",
+    codeLink: "https://github.com/pvarshh/tennis-predictor",
+    demoText: "View Report",
+    demoLink: "https://pvarshh.github.io/tennis-prediction/",
+    content: "The Association of Tennis Professionals (ATP) is the main governing body for men's professional tennis and the ATP tour is a worldwide tour with a series of tournaments consisting of the best tennis players around the globe. In our dataset, we have 74906 matches spanning across 2000-2024. Ultimately, the question we plan to investigate further in this project is: How strongly do pre-match player statistics, such as rank, age, height, and seeding predict the match winner? This question delves into the core predictability of tennis matches based on readily available player information before the match starts. Also, it explores fundamental factors often discussed by commentators and analysts."
+  },
+  {
+    description: "Data Science",
+    title: "College Football Data Analysis and Predictive Model",
     src: "/cfb.png",
     technologies: ["Python", "Pandas", "Numpy", "Matplotlib", "PyTorch"],
     codeText: "N/A",
@@ -93,6 +115,17 @@ export const dataScience = [
 ];
 
 export const machineLearning = [
+  {
+    description: "Large Language Models",
+    title: "Social Media Sentiment Analysis",
+    src: "/SocialMedia.png",
+    technologies: ["Python"],
+    codeText: "Code",
+    codeLink: "https://github.com/aims-umich/aims-dashboard",
+    demoText: "Not Deployed",
+    demoLink: "/",
+    content: "This project presents a comprehensive approach to sentiment analysis of nuclear-related social media posts using large language models. An automated web scraping solution was implemented, which extracted 120,000+ posts on Instagram Threads—originating from the United States—from 83 nuclear-related keywords using Playwright, a Python automation library. An interactive data dashboard to display real- time sentiment statistics was developed by integrating an automated data pipeline that dynamically updates the displayed statistics based on newly collected social media interactions. Overall, the study found that most online sentiment toward nuclear power is negative."
+  },
   {
     description: "Machine Learning",
     title: "Real vs. Fake Face Detector",

@@ -255,7 +255,7 @@ export function Projects() {
       </ul>
 
       <div className="max-w-4xl text-center">
-        <h1 className="text-5xl font-bold mb-8 pt-8">Machine Learning</h1>
+        <h1 className="text-5xl font-bold mb-8 pt-8">AI/ML</h1>
       </div>
       <ul className="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 z-20">
         {machineLearning.map((card, index) => (
