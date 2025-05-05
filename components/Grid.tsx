@@ -7,7 +7,7 @@ import { FaLocationArrow } from 'react-icons/fa6'
 const Grid = () => {
   return (
     <section id="about" className='relative overflow-hidden z-[20]' data-aos="fade-up" data-aos-duration="500">
-      <div className='pt-32 pb-12 z-[20]'>
+      <div className='lg:pt-32 pb-12 z-[20]'>
         <h1 className='heading'>
           About {' '} Me
           {/* <span className='text-blue-300'>Me</span> */}

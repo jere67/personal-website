@@ -16,14 +16,14 @@ const HeroContent = () => {
   const words = ["Software Engineer", "Website Developer", "Data Scientist", "Machine Learning Engineer"]
 
   return (
-    <motion.div initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-center px-20 mt-40 w-full h-full z-[20]">
+    <motion.div initial="hidden" animate="visible" className="flex flex-col md:flex-row items-center justify-center px-20 mt-20 md:mt-40 w-full h-full z-[20]">
       <div className="h-full w-full flex flex-col gap-5 justify-center text-center md:text-start">
         <TextGenerateEffect
-          className='flex flex-col gap-6 mt-6 text-3xl lg:text-6xl font-bold text-white max-w-[600px] w-auto h-auto' 
+          className='flex flex-col gap-6 mt-6 text-3xl md:text-6xl font-bold text-white max-w-[600px] w-auto h-auto' 
           words='Hi, my name is Jeremy Moon' // color turns purple on starting on 4th index 
         />
 
-        <motion.div variants={slideInFromLeft(1.4)} className="text-3xl font-normal max-w-[600px] h-full pb-10">
+        <motion.div variants={slideInFromLeft(1.4)} className="text-2xl md:text-3xl font-normal max-w-[600px] h-full pb-10">
           I am a<FlipWords words={words}/>
         </motion.div>
       </div>
