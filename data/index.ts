@@ -119,7 +119,7 @@ export const projects = [
     des: "The official website for the Artificial Intelligence and Multiphysics Simulations (AIMS) lab.",
     img: "/aims-website.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "#", // TODO: REPLACE WHEN WEBSITE IS DEPLOYED
+    link: "aims-umich.com",
   },
   {
     id: 2,

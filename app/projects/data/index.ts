@@ -6,8 +6,8 @@ export const webApplications = [
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/aims-website",
-    demoText: "Building...",
-    demoLink: "/",
+    demoText: "Live Demo",
+    demoLink: "https://aims-umich.com",
     content: "The official website for the Artificial Intelligence and Multiphysics Simulations (AIMS) lab."
   },
   {
