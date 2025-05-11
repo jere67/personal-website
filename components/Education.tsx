@@ -9,7 +9,7 @@ const Education = () => {
   const educationDetails = {
     university: "University of Michigan—Ann Arbor",
     degree: "Bachelor of Science in Engineering in Data Science",
-    gpa: "3.9 / 4.0",
+    gpa: "3.89 / 4.00",
     courses: [
       "EECS 485 - Web Systems (Scheduled)",
       "EECS 445 - Introduction to Machine Learning (Scheduled)",
