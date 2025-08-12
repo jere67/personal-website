@@ -1,14 +1,13 @@
 "use client"
 
-import React from 'react';
-import { FaGraduationCap, FaStar, FaFlask, FaUsers, FaAward } from 'react-icons/fa';
-import { IoSparkles } from "react-icons/io5";
-import { BackgroundGradient } from './ui/BackgroundGradient';
+import type React from "react"
+import { FaGraduationCap, FaStar, FaFlask, FaUsers, FaAward } from "react-icons/fa"
+import { IoSparkles } from "react-icons/io5"
 
 const Education = () => {
   const educationDetails = {
     university: "University of Michigan—Ann Arbor",
-    degree: "Bachelor of Science in Engineering in Data Science",
+    degree: "B.S.E. in Data Science, Minor in Business and Mathematics",
     gpa: "3.89 / 4.00",
     courses: [
       "EECS 485 - Web Systems (Scheduled)",
@@ -18,9 +17,8 @@ const Education = () => {
       "EECS 281 - Data Structures and Algorithms",
       "EECS 280 - Programming (OOP) and Intro Data Structures",
       "EECS 203 - Discrete Mathematics",
-      "EECS 201 - Computer Science Pragmatics (Scheduled)",
       "MATH 217 - Linear Algebra",
-      "STATS 412 - Introduction to Probability and Statistics (Scheduled)",
+      "MATH 425 - Introduction to Probability (Scheduled)",
       "Calculus 1, 2, 3",
     ],
     activities: [
@@ -29,96 +27,135 @@ const Education = () => {
       "Michigan Student Artificial Intelligence Lab (MSAIL)",
       "Korean-American Scientists and Engineers Association (KSEA)",
     ],
-    awards: [
-      "William J. Branstrom Freshman Prize (Top 5%)",
-      "2x Dean's Honor List",
-      "University Honors",
-    ],
-  };
+    awards: ["William J. Branstrom Freshman Prize (Top 5%)", "2x Dean's Honor List", "University Honors"],
+  }
 
   const ListItem = ({ children }: { children: React.ReactNode }) => (
-    <li className="flex items-start mb-2">
-      <FaStar className="text-blue-300 mr-3 mt-1 flex-shrink-0 text-xs" />
-      <span className="text-neutral-300 text-sm md:text-base">{children}</span>
+    <li className="flex items-start mb-2 last:mb-0">
+      <FaStar className="text-blue-400 mr-2 mt-1 flex-shrink-0 text-xs" />
+      <span className="text-neutral-300 text-sm leading-relaxed">{children}</span>
     </li>
-  );
+  )
 
-  const SectionTitle = ({ icon: Icon, title }: { icon: React.ElementType, title: string }) => (
-     <h2 className="font-bold text-lg md:text-xl lg:text-2xl mt-6 mb-3 text-neutral-100 flex items-center gap-2">
-        <Icon className="text-blue-300 text-xl" />
-        {title}
-      </h2>
-  );
+  const BentoCard = ({
+    children,
+    className = "",
+  }: {
+    children: React.ReactNode
+    className?: string
+  }) => (
+    <div
+      className={`
+      bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6
+      hover:border-white/20 hover:bg-black/50 transition-all duration-300
+      ${className}
+    `}
+    >
+      {children}
+    </div>
+  )
+
+  const SectionTitle = ({
+    icon: Icon,
+    title,
+  }: {
+    icon: React.ElementType
+    title: string
+  }) => (
+    <div className="flex items-center gap-3 mb-4">
+      <div className="p-2 bg-blue-500/20 rounded-lg border border-blue-400/30">
+        <Icon className="text-blue-400 text-lg" />
+      </div>
+      <h3 className="font-semibold text-lg text-white">{title}</h3>
+    </div>
+  )
 
   return (
-    <section id='education' className='relative overflow-hidden z-[20] py-20' data-aos="fade-up" data-aos-duration="500">
-      <div className='pb-12 z-[20]'>
-        <h1 className='heading z-20'>
-          My {' '} Education
-        </h1>
+    <section id="education" className="relative overflow-hidden z-[20]" data-aos="fade-up" data-aos-duration="500">
+      <div className="pb-12 z-[20]">
+        <h1 className="heading z-20">My Education</h1>
       </div>
 
-      <div className='flex flex-col items-center justify-center gap-3 h-full relative z-[20] px-4'>
-        <BackgroundGradient
-           className='h-full flex flex-col sm:w-[640px] w-[90vw] z-20 rounded-2xl overflow-hidden border border-white/[0.1] bg-black/[0.96]'
-        >
-          <div className='z-30 p-6 md:p-8 w-full'>
-            <div className='flex items-center gap-3 mb-1'>
-               <FaGraduationCap className="text-3xl text-blue-300" />
-               <h1 className='font-bold text-xl md:text-2xl lg:text-3xl text-white'>
-                 {educationDetails.university}
-                </h1>
+      <div className="flex flex-col items-center justify-center gap-6 h-full relative z-[20] px-4">
+        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* University Header */}
+          <BentoCard className="md:col-span-2 lg:col-span-3">
+            <div className="text-center">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <div className="p-3 bg-blue-500/20 rounded-xl border border-blue-400/30">
+                  <FaGraduationCap className="text-3xl text-blue-400" />
+                </div>
+              </div>
+              <h2 className="font-bold text-2xl lg:text-3xl text-white mb-2">{educationDetails.university}</h2>
+              <p className="text-lg text-neutral-300 mb-3">{educationDetails.degree}</p>
+              <div className="flex items-center justify-center gap-2">
+                <IoSparkles className="text-yellow-400 text-lg" />
+                <p className="text-lg text-neutral-200 font-medium">GPA: {educationDetails.gpa}</p>
+              </div>
             </div>
-            <p className='lg:text-lg text-neutral-300 mb-1 ml-10'>
-              {educationDetails.degree}
-            </p>
-            <div className='flex items-center gap-2 ml-10 mb-4'>
-              <IoSparkles className="text-yellow-400" />
-              <p className='text-base lg:text-lg text-neutral-200 font-medium'>
-                GPA: {educationDetails.gpa}
-              </p>
-            </div>
+          </BentoCard>
 
-            <div>
-              <SectionTitle icon={FaFlask} title="Relevant Coursework" />
-              <ul className='list-none pl-4'>
-                {educationDetails.courses.map((course, index) => (
-                  <ListItem key={index}>
-                    {course.includes("(Scheduled)") ? (
-                       <>
-                         {course.replace(" (Scheduled)", "")}
-                         <span className="ml-2 text-xs font-medium text-cyan-400 bg-cyan-900/50 px-2 py-0.5 rounded-full border border-cyan-700">Scheduled</span>
-                       </>
-                     ) : (
-                       course
-                     )}
-                  </ListItem>
-                ))}
-              </ul>
-            </div>
+          {/* Relevant Coursework */}
+          <BentoCard className="md:col-span-2 lg:col-span-1">
+            <SectionTitle icon={FaFlask} title="Relevant Coursework" />
+            <ul className="list-none space-y-2 max-h-80 overflow-y-auto custom-scrollbar">
+              {educationDetails.courses.map((course, index) => (
+                <ListItem key={index}>
+                  {course.includes("(Scheduled)") ? (
+                    <>
+                      {course.replace(" (Scheduled)", "")}
+                      <span className="ml-2 text-xs font-medium text-cyan-400 bg-cyan-900/50 px-2 py-1 rounded-full border border-cyan-700">
+                        Scheduled
+                      </span>
+                    </>
+                  ) : (
+                    course
+                  )}
+                </ListItem>
+              ))}
+            </ul>
+          </BentoCard>
 
-            <div>
-              <SectionTitle icon={FaUsers} title="Activities" />
-              <ul className='list-none pl-4'>
-                {educationDetails.activities.map((activity, index) => (
-                  <ListItem key={index}>{activity}</ListItem>
-                ))}
-              </ul>
-            </div>
+          {/* Activities */}
+          <BentoCard className="lg:col-span-1">
+            <SectionTitle icon={FaUsers} title="Activities" />
+            <ul className="list-none space-y-2">
+              {educationDetails.activities.map((activity, index) => (
+                <ListItem key={index}>{activity}</ListItem>
+              ))}
+            </ul>
+          </BentoCard>
 
-            <div>
-              <SectionTitle icon={FaAward} title="Awards" />
-               <ul className='list-none pl-4'>
-                {educationDetails.awards.map((award, index) => (
-                  <ListItem key={index}>{award}</ListItem>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </BackgroundGradient>
+          {/* Awards */}
+          <BentoCard className="lg:col-span-1">
+            <SectionTitle icon={FaAward} title="Awards" />
+            <ul className="list-none space-y-2">
+              {educationDetails.awards.map((award, index) => (
+                <ListItem key={index}>{award}</ListItem>
+              ))}
+            </ul>
+          </BentoCard>
+        </div>
       </div>
+
+      <style jsx>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: rgba(255, 255, 255, 0.1);
+          border-radius: 2px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(59, 130, 246, 0.5);
+          border-radius: 2px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(59, 130, 246, 0.7);
+        }
+      `}</style>
     </section>
-  );
-};
+  )
+}
 
-export default Education;
+export default Education
