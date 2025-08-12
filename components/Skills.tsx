@@ -9,6 +9,7 @@ import {
   dataScience,
   machineLearning,
   devTools,
+  cloud
 } from "@/data";
 
 import PlusIcon from "./ui/PlusIcon";
@@ -35,6 +36,7 @@ const skillCategories: SkillCategory[] = [
   { id: "backend", title: "Backend", skills: backend },
   { id: "datascience", title: "Data Science", skills: dataScience },
   { id: "aiml", title: "AI / ML", skills: machineLearning },
+  { id: "cloud", title: "Cloud", skills: cloud },
 ];
 
 const Skills = () => {
@@ -47,6 +49,8 @@ const Skills = () => {
         : [...prevIds, id]
     );
   };
+
+  const isOdd = skillCategories.length % 2 !== 0;
 
   return (
     <section
@@ -61,13 +65,19 @@ const Skills = () => {
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 md:items-start">
-          {skillCategories.map((category) => (
-            <SkillCategoryBox
+          {skillCategories.map((category, index) => (
+            <div
               key={category.id}
-              category={category}
-              isExpanded={expandedCategoryIds.includes(category.id)}
-              onToggle={() => handleToggle(category.id)}
-            />
+              className={isOdd && index === skillCategories.length - 1 ? 'md:col-span-2 md:flex md:justify-center' : ''}
+            >
+              <div className={isOdd && index === skillCategories.length - 1 ? 'md:w-full md:max-w-[calc(50%-0.75rem)]' : 'w-full'}>
+                <SkillCategoryBox
+                  category={category}
+                  isExpanded={expandedCategoryIds.includes(category.id)}
+                  onToggle={() => handleToggle(category.id)}
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>

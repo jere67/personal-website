@@ -164,6 +164,9 @@ export const devTools = [
   { skillName: "VSCode", img: "/vscode.png", width: 60, height: 60, url: "https://code.visualstudio.com/" },
   { skillName: "Bash", img: "/bash.png", width: 60, height: 60, url: "https://www.gnu.org/software/bash/" },
   { skillName: "Jupyter", img: "/jupyter.png", width: 60, height: 60, url: "https://jupyter.org/" },
+  { skillName: "AWS CDK", img: "/cdk.png", width: 60, height: 60, url: "https://aws.amazon.com/cdk/" },
+  { skillName: "AWS CloudWatch", img: "/cloudwatch.png", width: 60, height: 60, url: "https://aws.amazon.com/cloudwatch/" },
+  { skillName: "AWS IAM", img: "/iam.png", width: 60, height: 60, url: "https://aws.amazon.com/iam/" },
 ];
 
 export const frontend = [
@@ -182,6 +185,8 @@ export const backend = [
   { skillName: "PostgreSQL", img: "/postgres.png", width: 60, height: 60, url: "https://www.postgresql.org/" },
   { skillName: "Supabase", img: "/supabase.svg", width: 60, height: 60, url: "https://supabase.com/" },
   { skillName: "FastAPI", img: "/fastapi.png", width: 60, height: 60, url: "https://fastapi.tiangolo.com/" },
+  { skillName: "AWS Athena", img: "/athena.png", width: 60, height: 60, url: "https://aws.amazon.com/athena/" },
+  { skillName: "AWS DynamoDB", img: "/dynamodb.png", width: 60, height: 60, url: "https://aws.amazon.com/dynamodb/" },
 ];
 
 export const dataScience = [
@@ -189,12 +194,22 @@ export const dataScience = [
   { skillName: "NumPy", img: "/numpy.svg", width: 60, height: 60, url: "https://numpy.org/" },
   { skillName: "Plotly", img: "/plotly.jpeg", width: 60, height: 60, url: "https://plotly.com/" },
   { skillName: "Scikit-Learn", img: "/scikit-learn.png", width: 70, height: 70, url: "https://scikit-learn.org/" },
+  { skillName: "AWS Glue", img: "/glue.png", width: 60, height: 60, url: "https://aws.amazon.com/glue/" },
 ];
 
 export const machineLearning = [
   { skillName: "PyTorch", img: "/pytorch.svg", width: 60, height: 60, url: "https://pytorch.org/" },
   { skillName: "TensorFlow", img: "/tensorflow.svg", width: 60, height: 60, url: "https://www.tensorflow.org/" },
   { skillName: "OpenCV", img: "/opencv.svg", width: 60, height: 60, url: "https://opencv.org/" },
+];
+
+export const cloud  = [
+  { skillName: "AWS EC2", img: "/ec2.png", width: 60, height: 60, url: "https://aws.amazon.com/ec2/" },
+  { skillName: "AWS ELB", img: "/elb.png", width: 60, height: 60, url: "https://aws.amazon.com/elasticloadbalancing/" },
+  { skillName: "AWS ECS", img: "/ecs.png", width: 60, height: 60, url: "https://aws.amazon.com/ecs/" },
+  { skillName: "AWS Fargate", img: "/fargate.png", width: 60, height: 60, url: "https://aws.amazon.com/fargate/" },
+  { skillName: "AWS Route53", img: "/route53.png", width: 60, height: 60, url: "https://aws.amazon.com/route53/" },
+  { skillName: "AWS Certificate Manager", img: "/acm.png", width: 60, height: 60, url: "https://aws.amazon.com/certificate-manager/" },
 ];
 
 export const socialMedia = [
