@@ -24,22 +24,33 @@ const Spotify: React.FC = () => {
     }
 
     fetchSpotifyData()
-  }, [])
+  },[])
 
   if (!spotifyData) return null
 
   return (
-    <div className='flex justify-center items-center mt-8 z-20'>
-      <div className='flex items-center space-x-2 backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300 p-2 z-20'>
-        <FaSpotify className='text-green-500' />
-        {spotifyData.isPlaying && spotifyData.songUrl && spotifyData.name && spotifyData.artist ? (
-          <a href={spotifyData.songUrl} target="_blank" rel="noopener noreferrer" className='text-white hover:text-green-500 transition-colors z-20'>
-            {spotifyData.name} - {spotifyData.artist}
-          </a>
-        ) : (
-          <span className='text-white-200'>Not playing</span>
-        )}
-      </div>
+    <div className="flex items-center gap-3 px-1 py-0.5">
+      <FaSpotify 
+        className={`w-4 h-4 transition-colors duration-500 ${
+          spotifyData.isPlaying ? 'text-[#1DB954] animate-pulse' : 'text-neutral-600'
+        }`} 
+      />
+      
+      {spotifyData.isPlaying && spotifyData.songUrl && spotifyData.name && spotifyData.artist ? (
+        <a 
+          href={spotifyData.songUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-xs font-mono text-neutral-300 hover:text-white transition-colors truncate max-w-[200px] md:max-w-[300px]"
+          title={`${spotifyData.name} by ${spotifyData.artist}`}
+        >
+          {spotifyData.name} <span className="text-neutral-500">— {spotifyData.artist}</span>
+        </a>
+      ) : (
+        <span className="text-[10px] md:text-xs font-mono text-neutral-600 uppercase tracking-widest">
+          System Idle
+        </span>
+      )}
     </div>
   )
 }
