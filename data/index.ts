@@ -148,14 +148,15 @@ export const projects = [
 ];
 
 export const languages = [
-  { skillName: "Python", img: "/python.png", width: 60, height: 60, url: "https://www.python.org/" },
+  { skillName: "C", img: "/c.png", width: 60, height: 60, url: "https://en.wikipedia.org/wiki/C_(programming_language)" },
   { skillName: "C++", img: "/c++.png", width: 60, height: 60, url: "https://isocpp.org/" },
-  { skillName: "JavaScript", img: "/js.png", width: 60, height: 60, url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { skillName: "Python", img: "/python.png", width: 60, height: 60, url: "https://www.python.org/" },
+  { skillName: "Go", img: "/go.png", width: 60, height: 60, url: "https://go.dev/" },
   { skillName: "TypeScript", img: "/ts.png", width: 60, height: 60, url: "https://www.typescriptlang.org/" },
+  { skillName: "JavaScript", img: "/js.png", width: 60, height: 60, url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { skillName: "SQL", img: "/sql.png", width: 60, height: 60, url: "https://en.wikipedia.org/wiki/SQL" },
   { skillName: "HTML5", img: "/html.png", width: 60, height: 60, url: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" },
   { skillName: "CSS3", img: "/css.png", width: 60, height: 60, url: "https://developer.mozilla.org/en-US/docs/Web/CSS" },
-  { skillName: "C", img: "/c.png", width: 60, height: 60, url: "https://en.wikipedia.org/wiki/C_(programming_language)" },
-  { skillName: "SQL", img: "/sql.png", width: 60, height: 60, url: "https://en.wikipedia.org/wiki/SQL" },
 ];
 
 export const devTools = [
