@@ -1,114 +1,117 @@
-"use client";
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { cn } from "@/utils/cn";
-import Link from "next/link";
-import Image from "next/image";
-import { HiMenu, HiX } from "react-icons/hi";
+"use client"
+
+import React, { useState, useEffect } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import Image from "next/image"
+import { HiMenu, HiX } from "react-icons/hi"
 
 export const Navbar = ({
   navItems,
-  className,
 }: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
+  navItems: { name: string; link: string }[]
 }) => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const[scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-  };
+  // Detect scroll to shrink/style the navbar dynamically
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  },[])
 
   return (
-    <motion.div
-      className={cn(
-        "fixed top-0 inset-x-0 z-50",
-        "w-full",
-        "bg-black/80 backdrop-blur-sm",
-        className
-      )}
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className={cn(
-          "flex justify-between items-center",
-          "px-4 sm:px-6 lg:px-8 py-4",
-        )}>
-          <Link href="/" aria-label="Homepage" onClick={closeMobileMenu}>
-            <Image
-               src="/moon.svg"
-               alt="moon logo"
-               width={36}
-               height={36}
-               className="h-9 w-9"
-               priority
-             />
+    <>
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8, ease:[0.16, 1, 0.3, 1] }}
+        className={`fixed top-0 inset-x-0 z-[100] w-full flex justify-center transition-all duration-500 ${
+          scrolled ? "py-4" : "py-6"
+        }`}
+      >
+        <div 
+          className={`flex items-center justify-between px-6 transition-all duration-500 ${
+            scrolled 
+              ? "w-[95%] max-w-5xl bg-[#0a0a0a]/80 backdrop-blur-md border border-white/10 rounded-full py-3 shadow-[0_0_30px_rgba(0,0,0,0.8)]" 
+              : "w-full max-w-7xl bg-transparent border-transparent py-4"
+          }`}
+        >
+          {/* Logo */}
+          <Link href="/" aria-label="Homepage" onClick={() => setMobileMenuOpen(false)} className="relative z-10 flex items-center gap-3 group">
+            <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/5 group-hover:border-white/60 transition-colors">
+              <Image src="/moon.svg" alt="moon logo" width={18} height={18} className="opacity-80 group-hover:opacity-100 transition-opacity" />
+            </div>
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {navItems.map((navItem, idx) => (
-              <Link
-                key={`link-desktop-${idx}`}
-                href={navItem.link}
-                className={cn(
-                  "relative text-base font-medium",
-                  "text-neutral-300 hover:text-white",
-                  "transition-colors duration-200"
-                )}
-              >
-                {navItem.name}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="md:hidden">
-            <button
-              onClick={toggleMobileMenu}
-              aria-label={mobileMenuOpen ? "close main menu" : "open main menu"}
-              aria-expanded={mobileMenuOpen}
-              className="p-2 rounded-md text-neutral-300 hover:text-white hover:bg-neutral-700/50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-            >
-              {mobileMenuOpen ? <HiX className="h-6 w-6"/> : <HiMenu className="h-6 w-6"/>}
-            </button>
+          {/* Desktop Links with Sliding Indicator */}
+          <div className="hidden md:flex items-center gap-1 relative z-10">
+            {navItems.map((item) => {
+              const isActive = pathname === item.link
+              return (
+                <Link
+                  key={item.link}
+                  href={item.link}
+                  className={`relative px-5 py-2 text-xs font-mono uppercase tracking-[0.15em] transition-colors duration-300 ${
+                    isActive ? "text-white" : "text-neutral-500 hover:text-neutral-300"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="nav-indicator"
+                      className="absolute inset-0 bg-white/10 border border-white/10 rounded-full -z-10"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                  {item.name}
+                </Link>
+              )
+            })}
           </div>
-        </div>
-      </div>
 
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden relative z-20 p-2 text-neutral-400 hover:text-white transition-colors"
+          >
+            {mobileMenuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
+          </button>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden bg-neutral-900/95 backdrop-blur-sm border-t border-neutral-700"
+            initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            animate={{ opacity: 1, backdropFilter: "blur(16px)" }}
+            exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
+            className="fixed inset-0 z-[90] bg-[#050505]/95 flex flex-col items-center justify-center gap-8"
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-1">
-              {navItems.map((navItem, idx) => (
+            {navItems.map((item, i) => (
+              <motion.div
+                key={item.link}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+              >
                 <Link
-                  key={`link-mobile-${idx}`}
-                  href={navItem.link}
-                  onClick={closeMobileMenu}
-                  className={cn(
-                    "block rounded-md px-3 py-2 text-base font-medium",
-                    "text-neutral-300 hover:text-white hover:bg-neutral-700/50",
-                    "transition-colors duration-200"
-                  )}
+                  href={item.link}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-3xl font-light tracking-tighter ${
+                    pathname === item.link ? "text-white" : "text-neutral-600"
+                  }`}
                 >
-                  {navItem.name}
+                  {item.name}
                 </Link>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.div>
-  );
-};
+    </>
+  )
+}
