@@ -29,7 +29,7 @@ export const gridItems = [
   {
     id: 3,
     title: "University of Michigan",
-    description: "Bachelor of Science in Engineering in Data Science",
+    description: "Bachelor of Science in Engineering in Computer Science",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2 lg:max-h-[40vh]",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -49,12 +49,12 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Gym.ai",
+    title: "Stealth",
     description: "Currently building",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 w-[45vw] md:h-96 rounded-lg ",
     titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/cover.png",
+    img: "/stealth.png",
     spareImg: "",
   },
   {
