@@ -87,14 +87,14 @@ const Education = () => {
             
             <div className="flex flex-col gap-10">
               <div>
-                <p className="text-2xl text-neutral-200 tracking-tight">B.S.E. in Data Science</p>
+                <p className="text-2xl text-neutral-200 tracking-tight">B.S.E. in Computer Science</p>
                 <p className="text-neutral-500 mt-2 text-xs uppercase tracking-[0.15em] font-mono">Minor in Business & Mathematics</p>
               </div>
 
               <div className="flex flex-col items-start gap-2">
                 <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-600">Cumulative GPA</span>
                 <div className="flex items-baseline gap-3">
-                  <span className="text-6xl font-light tracking-tighter text-white">3.89</span>
+                  <span className="text-6xl font-light tracking-tighter text-white">3.86</span>
                   <span className="text-xl text-neutral-600 font-light">/ 4.00</span>
                 </div>
               </div>
