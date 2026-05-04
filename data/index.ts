@@ -119,7 +119,7 @@ export const projects = [
     des: "The official website for the Artificial Intelligence and Multiphysics Simulations (AIMS) lab.",
     img: "/aims-website.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg"],
-    link: "aims-umich.com",
+    link: "https://aims-umich.com",
   },
   {
     id: 2,
@@ -127,7 +127,7 @@ export const projects = [
     des: "Real time sentiment analysis for clean energy transition with large language models.",
     img: "/SocialMedia.png",
     iconLists: ["/re.svg", "/python.svg", "/fastapi.svg", "/huggingface.svg", "sqlite.svg"],
-    link: "courses.lsa.umich.edu/urop-symposium/symposium-presentati/enabling-real-time-sentiment-analysis-for-clean-energy-transition-with-large-language-models/", // TODO: REPLACE WHEN WEBSITE IS DEPLOYED
+    link: "https://courses.lsa.umich.edu/urop-symposium/symposium-presentati/enabling-real-time-sentiment-analysis-for-clean-energy-transition-with-large-language-models/", // TODO: REPLACE WHEN WEBSITE IS DEPLOYED
   },
   {
     id: 3,
@@ -135,7 +135,7 @@ export const projects = [
     des: "An AI-powered voice interface for crash detection and optimized route rerouting.",
     img: "/speechmaps.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/groq.webp"],
-    link: "speechmaps.vercel.app",
+    link: "https://speechmaps.vercel.app",
   },
   {
     id: 4,
@@ -143,7 +143,7 @@ export const projects = [
     des: "Data analysis and HistGradientBoostingClassifier model to predict ATP tour match outcomes with 92.01% accuracy.",
     img: "/roger-federer.jpg",
     iconLists: ["/python.svg", "/pandas.png", "/numpy.svg", "/scikit-learn.png"],
-    link: "pvarshh.github.io/tennis-prediction/",
+    link: "https://pvarshh.github.io/tennis-prediction/",
   },
 ];
 
