@@ -287,7 +287,7 @@ export default function AboutContent() {
                     </span>
                     <div className="h-[1px] flex-1 bg-neutral-800" />
                     <span className="text-[10px] font-mono tracking-widest text-neutral-600">
-                      // {activeInterest.distance} AU
+                      {activeInterest.distance} AU
                     </span>
                   </div>
 

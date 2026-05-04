@@ -94,7 +94,6 @@ export function Projects() {
             </p>
 
             <div className="flex flex-wrap items-center gap-2 text-[10px] font-mono tracking-widest uppercase text-neutral-600 group-hover:text-cyan-500/80 transition-colors duration-500">
-              <span className="text-neutral-700">//</span>
               {card.technologies.slice(0, 3).join(" • ")}
               {card.technologies.length > 3 && " ..."}
             </div>
