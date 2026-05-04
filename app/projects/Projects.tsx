@@ -1,27 +1,53 @@
 "use client";
+
 import Image from "next/image";
-import React, { useEffect, useId, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./hooks/UseOutsideClick";
-import { webApplications, machineLearning, dataScience, computerScience } from "./data"
+import { webApplications, machineLearning, dataScience, computerScience } from "./data";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { FaLocationArrow } from "react-icons/fa6";
 
+// Type definition for cleaner state management
+type Project = {
+  description: string;
+  title: string;
+  src: string;
+  technologies: string[];
+  codeText: string;
+  codeLink: string;
+  demoText: string;
+  demoLink: string;
+  content: string;
+};
+
+// --- MOTIF COMPONENTS ---
+const Star = ({ className = "w-4 h-4" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" fill="currentColor"/>
+  </svg>
+);
+
+const SectionHeader = ({ title }: { title: string }) => (
+  <div className="flex items-center gap-6 mb-12 mt-20">
+    <Star className="text-white w-5 h-5 animate-pulse" />
+    <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-neutral-400">{title}</h2>
+    <div className="h-[1px] flex-1 bg-gradient-to-r from-neutral-800 to-transparent" />
+  </div>
+);
+
 export function Projects() {
-  const [active, setActive] = useState<(typeof webApplications)[number] | boolean | null>(
-    null
-  );
-  const id = useId();
+  const [active, setActive] = useState<Project | null>(null);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setActive(false);
+        setActive(null);
       }
     }
 
-    if (active && typeof active === "object") {
+    if (active) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -33,369 +59,223 @@ export function Projects() {
 
   useOutsideClick(ref, () => setActive(null));
 
-  return (
-    <>
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-5xl font-bold mb-4 pt-20">Projects</h1>
-        <p className="text-lg mb-8">Below shows all the previous work I&apos;ve done. Click on any card to learn more about them!</p>
-        <hr />
-      </div>
-      <div className="max-w-4xl text-center">
-        <h1 className="text-5xl font-bold mb-8 pt-8">Web Applications</h1>
-      </div>
-      <AnimatePresence>
-        {active && typeof active === "object" && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-20"
-          />
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
-            <motion.button
-              key={`button-${active.title}-${id}`}
-              layout
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{
-                opacity: 0,
-                transition: {
-                  duration: 0.05,
-                },
-              }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6 z-[101]"
-              onClick={() => setActive(null)}
-            >
-            <CloseIcon />
-            </motion.button>
-            <motion.div
-              layoutId={`card-${active.title}-${id}`}
-              ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden z-20"
-            >
-              <motion.div layoutId={`image-${active.title}-${id}`}>
-                <Image
-                  priority
-                  width={200}
-                  height={200}
-                  src={active.src}
-                  alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top z-20"
-                />
-              </motion.div>
+  const ProjectGrid = ({ data }: { data: Project[] }) => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 z-20 relative">
+      {data.map((card) => (
+        <motion.div
+          key={card.title}
+          onClick={() => setActive(card)}
+          className="group flex flex-col cursor-pointer"
+        >
+          {/* Cinematic Image Frame */}
+          <div className="relative aspect-[16/10] w-full overflow-hidden border border-neutral-800/60 group-hover:border-neutral-400 transition-colors duration-500 mb-6 bg-neutral-950">
+            <div className="w-full h-full relative">
+              <Image
+                fill
+                src={card.src}
+                alt={card.title}
+                className="object-cover opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+            
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/90 via-transparent to-transparent opacity-80" />
+            
+          </div>
 
-              <div className="z-20">
-                <div className="flex justify-between items-start p-4 z-20">
-                  <div className="z-20">
-                    <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-neutral-700 dark:text-neutral-200 text-base z-20"
-                    >
-                      {active.title}
-                    </motion.h3>
-                    <motion.p
-                      layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 text-base z-20"
-                    >
+          {/* Typography & Details */}
+          <div className="flex flex-col">
+            <h3 className="text-2xl font-normal tracking-tighter text-neutral-200 group-hover:text-white transition-colors duration-300 mb-3">
+              {card.title}
+            </h3>
+            
+            <p className="text-sm font-light text-neutral-500 line-clamp-2 leading-relaxed mb-4">
+              {card.content}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-2 text-[10px] font-mono tracking-widest uppercase text-neutral-600 group-hover:text-cyan-500/80 transition-colors duration-500">
+              <span className="text-neutral-700">//</span>
+              {card.technologies.slice(0, 3).join(" • ")}
+              {card.technologies.length > 3 && " ..."}
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+
+  return (
+    <div className="w-full max-w-7xl mx-auto px-6 lg:px-12 pb-32">
+      
+      {/* --- HERO HEADER --- */}
+      <div className="pt-24 md:pt-32 pb-4">
+        <h1 className="text-6xl md:text-8xl font-normal tracking-tighter text-white">
+          Projects
+        </h1>
+      </div>
+
+      {/* --- MODAL DOSSIER OVERLAY --- */}
+      <AnimatePresence>
+        {active && (
+          // Extremely high z-index to guarantee we cover navbars
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8 lg:p-12">
+            
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-[#050505]/90 backdrop-blur-xl"
+            />
+
+            {/* Main Split-Screen Modal Container */}
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              transition={{ duration: 0.4, ease:[0.16, 1, 0.3, 1] }}
+              className="w-full max-w-6xl max-h-[90vh] md:h-[80vh] bg-[#0a0a0a] border border-neutral-800 rounded-none md:rounded-2xl overflow-hidden flex flex-col md:flex-row shadow-[0_0_100px_rgba(0,0,0,0.8)] relative z-[10000]"
+            >
+              
+              {/* Absolute close button MOVED INSIDE the modal card */}
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ delay: 0.1 }}
+                className="absolute top-4 right-4 md:top-6 md:right-6 p-3 bg-black/60 hover:bg-black/80 backdrop-blur-xl border border-white/20 rounded-full text-white transition-all z-[105]"
+                onClick={() => setActive(null)}
+              >
+                <CloseIcon />
+              </motion.button>
+
+              {/* Left Side: Massive Cinematic Media */}
+              <div className="w-full md:w-1/2 h-56 md:h-full relative shrink-0 border-b md:border-b-0 md:border-r border-neutral-800 bg-neutral-950">
+                <div className="w-full h-full relative">
+                  <Image
+                    priority
+                    fill
+                    src={active.src}
+                    alt={active.title}
+                    className="object-cover object-top opacity-90"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0a0a0a]/80 hidden md:block" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent md:hidden block" />
+                </div>
+                
+                <div className="absolute bottom-6 left-6 right-6 hidden md:flex flex-wrap gap-2 z-10">
+                   {active.technologies.map((tech, idx) => (
+                     <span key={idx} className="px-3 py-1.5 bg-black/60 backdrop-blur-md border border-white/10 text-[9px] font-mono uppercase tracking-[0.2em] text-neutral-300">
+                       {tech}
+                     </span>
+                   ))}
+                </div>
+              </div>
+
+              {/* Right Side: Data & Intel. Added 'flex-1 min-h-0' to fix mobile scrolling */}
+              <div className="w-full md:w-1/2 flex flex-col flex-1 min-h-0 bg-gradient-to-b from-[#0a0a0a] to-[#050505]">
+                
+                {/* Scrollable Content Area */}
+                <div className="flex-1 overflow-y-auto p-6 md:p-10 lg:p-12 custom-scrollbar">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="w-2 h-2 bg-cyan-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(6,182,212,0.6)]" />
+                    <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-cyan-400">
                       {active.description}
-                    </motion.p>
+                    </span>
                   </div>
 
-                  <motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter text-white mb-8 leading-[1.05] pr-12 md:pr-0">
+                    {active.title}
+                  </h3>
+
+                  {/* Mobile-only tech stack */}
+                  <div className="flex flex-wrap gap-2 mb-8 md:hidden">
+                    {active.technologies.map((tech, idx) => (
+                      <span key={idx} className="px-3 py-1.5 bg-black border border-white/10 text-[9px] font-mono uppercase tracking-[0.2em] text-neutral-400">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  <p className="text-sm md:text-base font-light text-neutral-400 leading-relaxed">
+                    {active.content}
+                  </p>
+                </div>
+
+                {/* Sticky Action Footer */}
+                <div className="p-6 md:p-10 border-t border-neutral-800/60 bg-[#050505] flex flex-col sm:flex-row gap-4 shrink-0">
+                  <a
                     href={active.codeLink}
                     target="_blank"
-                    className="ml-auto mx-1 inline-flex justify-center items-center shadow-[0_0_0_3px_#000000_inset] px-4 py-3 bg-transparent border border-black dark:border-white dark:text-white text-black rounded-lg font-bold z-20"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex justify-center items-center gap-3 px-6 py-4 bg-white text-black hover:bg-neutral-200 transition-colors duration-300 font-mono text-xs uppercase tracking-widest font-semibold"
                   >
                     {active.codeText}
-                    <SiGithub className="mx-1" width={15}/>
-                  </motion.a>
-                  <motion.a
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    <SiGithub className="w-4 h-4" />
+                  </a>
+                  
+                  <a
                     href={active.demoLink}
                     target="_blank"
-                    className="inline-flex justify-center items-center shadow-[0_0_0_3px_#000000_inset] px-4 py-3 bg-transparent border border-black dark:border-white dark:text-white text-black rounded-lg font-bold z-20"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex justify-center items-center gap-3 px-6 py-4 border border-neutral-700 text-white hover:bg-neutral-800 transition-colors duration-300 font-mono text-xs uppercase tracking-widest"
                   >
-                    {active.demoText}<FaLocationArrow className="mx-1"/>
-                  </motion.a>
+                    {active.demoText}
+                    <FaLocationArrow className="w-3 h-3" />
+                  </a>
                 </div>
-                <div className="pt-4 relative px-4 z-20">
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] z-20"
-                  >
-                    {active.content}
-                  </motion.div>
-                </div>
+
               </div>
             </motion.div>
           </div>
-        ) : null}
+        )}
       </AnimatePresence>
-      <ul className="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 z-20">
-        {webApplications.map((card, index) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer z-20"
-          >
-            <div className="flex gap-4 flex-col  w-full z-20">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <Image
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-top z-20"
-                />
-              </motion.div>
-              <div className="flex justify-center items-center flex-col z-20">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base z-20"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base z-20"
-                >
-                  {card.description}
-                </motion.p>
-                <motion.p>
-                  {card.technologies?.map((item, index) => (
-                    <button key={index} className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block m-1">
-                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                      <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    </span>
-                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                      <span>
-                        {card.technologies[index]}
-                      </span>
-                    </div>
-                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                  </button>
-                  ))}
-                </motion.p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </ul>
-      
-      <div className="max-w-4xl text-center">
-        <h1 className="text-5xl font-bold mb-8 pt-8">Data Science</h1>
-      </div>
-      <ul className="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 z-20">
-        {dataScience.map((card, index) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer z-20"
-          >
-            <div className="flex gap-4 flex-col  w-full z-20">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <Image
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-top z-20"
-                />
-              </motion.div>
-              <div className="flex justify-center items-center flex-col z-20">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base z-20"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base z-20"
-                >
-                  {card.description}
-                </motion.p>
-                <motion.p>
-                  {card.technologies?.map((item, index) => (
-                    <button key={index} className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block m-1">
-                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                      <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    </span>
-                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                      <span>
-                        {card.technologies[index]}
-                      </span>
-                    </div>
-                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                  </button>
-                  ))}
-                </motion.p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </ul>
 
-      <div className="max-w-4xl text-center">
-        <h1 className="text-5xl font-bold mb-8 pt-8">AI/ML</h1>
-      </div>
-      <ul className="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 z-20">
-        {machineLearning.map((card, index) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer z-20"
-          >
-            <div className="flex gap-4 flex-col  w-full z-20">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <Image
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-top z-20"
-                />
-              </motion.div>
-              <div className="flex justify-center items-center flex-col z-20">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base z-20"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base z-20"
-                >
-                  {card.description}
-                </motion.p>
-                <motion.p>
-                  {card.technologies?.map((item, index) => (
-                    <button key={index} className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block m-1">
-                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                      <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    </span>
-                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                      <span>
-                        {card.technologies[index]}
-                      </span>
-                    </div>
-                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                  </button>
-                  ))}
-                </motion.p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </ul>
+      {/* --- PROJECT CATEGORIES --- */}
+      <div className="flex flex-col gap-10">
+        <div>
+          <SectionHeader title="Web Applications" />
+          <ProjectGrid data={webApplications} />
+        </div>
 
-      <div className="max-w-4xl text-center">
-        <h1 className="text-5xl font-bold mb-8 pt-8">Computer Science</h1>
+        <div>
+          <SectionHeader title="Data Science" />
+          <ProjectGrid data={dataScience} />
+        </div>
+
+        <div>
+          <SectionHeader title="AI / Machine Learning" />
+          <ProjectGrid data={machineLearning} />
+        </div>
+
+        <div>
+          <SectionHeader title="Computer Science" />
+          <ProjectGrid data={computerScience} />
+        </div>
       </div>
-      <ul className="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 z-20">
-        {computerScience.map((card, index) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer z-20"
-          >
-            <div className="flex gap-4 flex-col  w-full z-20">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <Image
-                  width={100}
-                  height={100}
-                  src={card.src}
-                  alt={card.title}
-                  className="h-60 w-full  rounded-lg object-cover object-top z-20"
-                />
-              </motion.div>
-              <div className="flex justify-center items-center flex-col z-20">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base z-20"
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base z-20"
-                >
-                  {card.description}
-                </motion.p>
-                <motion.p>
-                  {card.technologies?.map((item, index) => (
-                    <button key={index} className="bg-slate-800 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6  text-white inline-block m-1">
-                    <span className="absolute inset-0 overflow-hidden rounded-full">
-                      <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                    </span>
-                    <div className="relative flex space-x-2 items-center z-10 rounded-full bg-zinc-950 py-0.5 px-4 ring-1 ring-white/10 ">
-                      <span>
-                        {card.technologies[index]}
-                      </span>
-                    </div>
-                    <span className="absolute -bottom-0 left-[1.125rem] h-px w-[calc(100%-2.25rem)] bg-gradient-to-r from-emerald-400/0 via-emerald-400/90 to-emerald-400/0 transition-opacity duration-500 group-hover:opacity-40" />
-                  </button>
-                  ))}
-                </motion.p>
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </ul>
-    </>
+
+    </div>
   );
 }
 
-
-
-export const CloseIcon = () => {
+const CloseIcon = () => {
   return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
+    <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-4 w-4 text-black z-[200]"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M18 6l-12 12" />
       <path d="M6 6l12 12" />
-    </motion.svg>
+    </svg>
   );
 };
