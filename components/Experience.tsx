@@ -133,9 +133,9 @@ const Experience = () => {
                 {/* 
                   Logo Treatment: 
                   Forced into a white circular frame so JPGs with white backgrounds look intentional.
-                  Kept grayscale and faded until hovered.
+                  Kept faded until hovered.
                 */}
-                <div className="relative w-12 h-12 rounded-full overflow-hidden grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 border border-neutral-800 group-hover:border-neutral-300 shrink-0 bg-white shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 border border-neutral-800 group-hover:border-neutral-300 shrink-0 bg-white shadow-[0_0_0_rgba(255,255,255,0)] group-hover:shadow-[0_0_20px_rgba(255,255,255,0.15)]">
                   <Image
                     src={card.logoPath}
                     alt={`${card.company} logo`}
