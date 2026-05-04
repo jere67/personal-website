@@ -155,8 +155,8 @@ const SkillCategoryRow: React.FC<SkillCategoryRowProps> = ({
                   className="group/skill flex flex-col items-center gap-4 focus:outline-none"
                   title={`Visit ${skill.skillName} website`}
                 >
-                  {/* High-end Logo Container: Grayscale default, full color + jump on hover */}
-                  <div className="relative flex justify-center items-center h-12 w-12 md:h-14 md:w-14 grayscale opacity-40 group-hover/skill:grayscale-0 group-hover/skill:opacity-100 transition-all duration-500 transform group-hover/skill:scale-110 group-hover/skill:-translate-y-1">
+                  {/* High-end Logo Container: small opaque default, full color + jump on hover */}
+                  <div className="relative flex justify-center items-center h-12 w-12 md:h-14 md:w-14 opacity-40 group-hover/skill:grayscale-0 group-hover/skill:opacity-100 transition-all duration-500 transform group-hover/skill:scale-110 group-hover/skill:-translate-y-1">
                     <Image
                       src={skill.img}
                       alt={`${skill.skillName} logo`}
