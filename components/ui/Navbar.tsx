@@ -43,7 +43,7 @@ export const Navbar = ({
           {/* Logo */}
           <Link href="/" aria-label="Homepage" onClick={() => setMobileMenuOpen(false)} className="relative z-10 flex items-center gap-3 group">
             <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center bg-white/5 group-hover:border-white/60 transition-colors">
-              <Image src="/moon.svg" alt="moon logo" width={18} height={18} className="opacity-80 group-hover:opacity-100 transition-opacity" />
+              <Image src="/icons/moon.svg" alt="moon logo" width={18} height={18} className="opacity-80 group-hover:opacity-100 transition-opacity" />
             </div>
           </Link>
 

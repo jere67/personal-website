@@ -29,19 +29,19 @@ const diveItems =[
 ]
 
 const topTracks =[
-  { title: "Paper Thin (Headhunterz Remix)", artist: "ILLENIUM, Tom DeLonge, Angels & Airwaves", art: "/paperthin.jpg" }, 
-  { title: "Alive (feat RUNN) [Trivecta Remix]", artist: "Dabin, RUNN, Trivecta", art: "/alive.jpg" },
-  { title: "Waiting for Love", artist: "Avicii", art: "/wfl.png" },
-  { title: "Retraced", artist: "NURKO, HALIENE", art: "/retraced.jpeg" },
-  { title: "hold my hand", artist: "Knock2, Sophia Gripari", art: "/holdmyhand.jpg" },
+  { title: "Paper Thin (Headhunterz Remix)", artist: "ILLENIUM, Tom DeLonge, Angels & Airwaves", art: "/music/paperthin.jpg" }, 
+  { title: "Alive (feat RUNN) [Trivecta Remix]", artist: "Dabin, RUNN, Trivecta", art: "/music/alive.jpg" },
+  { title: "Waiting for Love", artist: "Avicii", art: "/music/wfl.png" },
+  { title: "Retraced", artist: "NURKO, HALIENE", art: "/music/retraced.jpeg" },
+  { title: "hold my hand", artist: "Knock2, Sophia Gripari", art: "/music/holdmyhand.jpg" },
 ]
 
 const topArtists =[
-  { name: "Avicii", art: "/avicii.jpeg" }, 
-  { name: "ILLENIUM", art: "/illenium.jpeg" },
-  { name: "Dabin", art: "/dabin.jpg" },
-  { name: "Seven Lions", art: "/sevenlions.jpg" },
-  { name: "Knock2", art: "/knock2.jpg" },
+  { name: "Avicii", art: "/music/avicii.jpeg" }, 
+  { name: "ILLENIUM", art: "/music/illenium.jpeg" },
+  { name: "Dabin", art: "/music/dabin.jpg" },
+  { name: "Seven Lions", art: "/music/sevenlions.jpg" },
+  { name: "Knock2", art: "/music/knock2.jpg" },
 ]
 
 // --- 3D SOLAR SYSTEM DATA ---

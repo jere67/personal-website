@@ -145,7 +145,7 @@ const Hero = () => {
             
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-neutral-800/80 group-hover:border-neutral-400 transition-all duration-700 bg-neutral-900 shadow-[0_0_30px_rgba(0,0,0,0.6)]">
               <Image
-                src="/my-head.png"
+                src="/personal/my-head.png"
                 alt="Jeremy Moon"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

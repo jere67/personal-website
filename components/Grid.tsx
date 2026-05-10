@@ -18,16 +18,16 @@ export const WidgetCard = ({ children, className = "" }: { children: React.React
 
 const PhotoCarousel = () => {
   const images = [
-    "/img1.jpg",
-    "/img2.jpg",
-    "/img3.jpg",
-    "/img4.jpg",
-    "/img5.jpg",
-    "/img6.jpg",
-    "/img7.jpg",
-    "/img8.jpg",
-    "/img9.jpg",
-    "/img10.jpg",
+    "/personal/img1.jpg",
+    "/personal/img2.jpg",
+    "/personal/img3.jpg",
+    "/personal/img4.jpg",
+    "/personal/img5.jpg",
+    "/personal/img6.jpg",
+    "/personal/img7.jpg",
+    "/personal/img8.jpg",
+    "/personal/img9.jpg",
+    "/personal/img10.jpg",
   ];
   const [currentIndex, setCurrentIndex] = useState(0)
 

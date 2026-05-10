@@ -2,7 +2,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "AIMS Website",
-    src: "/aims-website.png",
+    src: "/projects/aims-website.png",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/aims-website",
@@ -13,7 +13,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "SpeechMaps",
-    src: "/speechmaps.png",
+    src: "/projects/speechmaps.png",
     technologies: ["Groq AI", "Next.js", "Tailwind CSS", "TypeScript"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/speechmaps",
@@ -24,7 +24,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "Gym.ai",
-    src: "/gymai.png",
+    src: "/projects/gymai.png",
     technologies: ["Gemini 1.5 Pro API", "React", "Tailwind CSS", "Flask"],
     codeText: "Code",
     codeLink: "/",
@@ -35,7 +35,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "Crypto Moon",
-    src: "/crypto-moon.png",
+    src: "/projects/crypto-moon.png",
     technologies: ["EJS", "Node.js", "Express.js", "CoinGecko API"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/crypto-moon",
@@ -46,7 +46,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "Personal Website",
-    src: "/personal_website.png",
+    src: "/projects/personal_website.png",
     technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Three.js", "Aceternity UI"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/personal-website",
@@ -57,7 +57,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "Blog Moon",
-    src: "/blog.png",
+    src: "/projects/blog.png",
     technologies: ["EJS", "Node.js", "Express.js", "REST API"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/blog",
@@ -68,7 +68,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "Sushi Restaurant",
-    src: "/sushiman.png",
+    src: "/projects/sushiman.png",
     technologies: ["HTML5", "CSS3", "JavaScript"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/sushiman",
@@ -79,7 +79,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "Keeper App",
-    src: "/keeper.png",
+    src: "/projects/keeper.png",
     technologies: ["React", "Material UI"],
     codeText: "Code",
     codeLink: "https://github.com/jere67/blog",
@@ -90,7 +90,7 @@ export const webApplications = [
   {
     description: "Distributed Search Engine",
     title: "Ask485",
-    src: "/ask485.png",
+    src: "/projects/ask485.png",
     technologies: ["Python", "Flask", "MapReduce", "REST APIs", "SQLite", "HTML/CSS", "BeautifulSoup", "Multithreading"],
     codeText: "Code",
     codeLink: "/",
@@ -101,7 +101,7 @@ export const webApplications = [
   {
     description: "Web Application",
     title: "Insta485",
-    src: "/insta485.png",
+    src: "/projects/insta485.png",
     technologies: ["React", "JavaScript (ES6+)", "Flask", "REST APIs", "SQLite", "Webpack"],
     codeText: "N/A",
     codeLink: "/",
@@ -115,7 +115,7 @@ export const dataScience = [
   {
     description: "Data Science",
     title: "Who is the ATP Superstar?",
-    src: "/roger-federer.jpg",
+    src: "/projects/roger-federer.jpg",
     technologies: ["Python", "Pandas", "Numpy", "Plotly", "Scikit-learn"],
     codeText: "Code",
     codeLink: "https://github.com/pvarshh/tennis-predictor",
@@ -126,7 +126,7 @@ export const dataScience = [
   {
     description: "Data Science",
     title: "College Football Data Analysis and Predictive Model",
-    src: "/cfb.png",
+    src: "/projects/cfb.png",
     technologies: ["Python", "Pandas", "Numpy", "Matplotlib", "PyTorch"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -140,7 +140,7 @@ export const machineLearning = [
   {
     description: "Large Language Models",
     title: "Social Media Sentiment Analysis",
-    src: "/SocialMedia.png",
+    src: "/projects/SocialMedia.png",
     technologies: ["Python"],
     codeText: "Code",
     codeLink: "https://github.com/aims-umich/aims-dashboard",
@@ -151,7 +151,7 @@ export const machineLearning = [
   {
     description: "Machine Learning",
     title: "Real vs. Fake Face Detector",
-    src: "/rvf.png",
+    src: "/projects/rvf.png",
     technologies: ["Python", "PyTorch", "EfficientNet-B5"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -162,7 +162,7 @@ export const machineLearning = [
   {
     description: "Machine Learning",
     title: "Multilayer Perceptron (MLP)",
-    src: "/mlp.png",
+    src: "/projects/mlp.png",
     technologies: ["Python"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -173,7 +173,7 @@ export const machineLearning = [
   {
     description: "Machine Learning",
     title: "Piazza Topic Classifier",
-    src: "/piazza.png",
+    src: "/projects/piazza.png",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -187,7 +187,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "Sharded KV Store with Paxos",
-    src: "/shardkv.png",
+    src: "/projects/shardkv.png",
     technologies: ["Go", "Paxos", "RPC", "Concurrency", "Fault Tolerance", "Sharding"],
     codeText: "N/A",
     codeLink: "/",
@@ -198,7 +198,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "Paxos-based Key/Value Service",
-    src: "/paxos.png",
+    src: "/projects/paxos.png",
     technologies: ["Go", "Paxos", "Concurrency", "RPC", "Fault Tolerance"],
     codeText: "N/A",
     codeLink: "/",
@@ -209,7 +209,7 @@ export const computerScience = [
     {
     "description": "Computer Science",
     "title": "Primary/Backup Key-Value Service",
-    "src": "/primary-backup.png",
+    "src": "/projects/primary-backup.png",
     "technologies": ["Go", "RPC", "Fault Tolerance", "Replication", "Concurrency", "Client-Server Architecture"],
     "codeText": "N/A",
     "codeLink": "/",
@@ -220,7 +220,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "MapReduce Framework",
-    src: "/mapreduce.png",
+    src: "/projects/mapreduce.png",
     technologies: ["Python", "Sockets (TCP/UDP)", "Multithreading", "Unix"],
     codeText: "N/A",
     codeLink: "/",
@@ -231,7 +231,7 @@ export const computerScience = [
   {
     "description": "Computer Science",
     "title": "LC-2K Cache Simulator",
-    "src": "/cache.png",
+    "src": "/projects/cache.png",
     "technologies": ["C", "Computer Architecture", "LRU"],
     "codeText": "N/A",
     "codeLink": "/",
@@ -242,7 +242,7 @@ export const computerScience = [
   {
     "description": "Computer Science",
     "title": "LC-2K Pipeline Simulator",
-    "src": "/pipeline.png",
+    "src": "/projects/pipeline.png",
     "technologies": ["C", "Computer Architecture"],
     "codeText": "N/A",
     "codeLink": "/",
@@ -253,7 +253,7 @@ export const computerScience = [
   {
     "description": "Computer Science",
     "title": "Advanced Assembler and Linker",
-    "src": "/linker.png",
+    "src": "/projects/linker.png",
     "technologies": ["C", "Assembly"],
     "codeText": "N/A",
     "codeLink": "/",
@@ -264,7 +264,7 @@ export const computerScience = [
   {
     "description": "Computer Science",
     "title": "Assembler, Simulator, and Assembly-Language Multiplication",
-    "src": "/lc2k.png",
+    "src": "/projects/lc2k.png",
     "technologies": ["C", "Assembly"],
     "codeText": "N/A",
     "codeLink": "/",
@@ -275,7 +275,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "Pokemon",
-    src: "/pokemon.jpg",
+    src: "/projects/pokemon.jpg",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -286,7 +286,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "281Bank",
-    src: "/bank.png",
+    src: "/projects/bank.png",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -297,7 +297,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "Stock Simulator",
-    src: "/stock.jpg",
+    src: "/projects/stock.jpg",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -308,7 +308,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "Back To The Ship",
-    src: "/maze.jpg",
+    src: "/projects/maze.jpg",
     technologies: ["C++", "Depth First Search (DFS)", "Breadth First Search (BFS)"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -319,7 +319,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "Emacs Clone",
-    src: "/emacs.png",
+    src: "/projects/emacs.png",
     technologies: ["C++"],
     codeText: "N/A",
     codeLink: "/projects",
@@ -330,7 +330,7 @@ export const computerScience = [
   {
     description: "Computer Science",
     title: "Euchre Simulator",
-    src: "/euchre.png",
+    src: "/projects/euchre.png",
     technologies: ["C++", "OOP"],
     codeText: "N/A",
     codeLink: "/projects",
