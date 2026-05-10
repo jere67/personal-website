@@ -225,6 +225,21 @@ const Hero = () => {
         </motion.div>
 
       </div>
+
+      {/* Scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 pointer-events-none"
+      >
+        <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-neutral-600">Scroll</span>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          className="w-[1px] h-6 bg-gradient-to-b from-neutral-600 to-transparent"
+        />
+      </motion.div>
     </section>
   )
 }
