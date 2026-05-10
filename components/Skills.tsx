@@ -3,22 +3,9 @@
 import React, { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import {
-  languages,
-  frontend,
-  backend,
-  dataScience,
-  machineLearning,
-  devTools,
-  cloud
-} from "@/data"
-
-// The same site-wide geometric motif
-const Star = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" fill="currentColor"/>
-  </svg>
-)
+import { languages, frontend, backend, dataScience, machineLearning, devTools, cloud } from "@/data"
+import SectionHeader from "./ui/SectionHeader"
+import AmbientLighting from "./ui/AmbientLighting"
 
 type SkillObject = {
   skillName: string
@@ -63,19 +50,11 @@ const Skills = () => {
       data-aos="fade-up"
       data-aos-duration="700"
     >
-      {/* Subtle Ambient Lighting */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.02)_0%,transparent_70%)]" />
-      </div>
+      <AmbientLighting />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
         
-        {/* Section Header */}
-        <div className="flex items-center gap-6 mb-16 md:mb-24">
-          <Star className="text-white w-5 h-5 animate-pulse" />
-          <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-neutral-400">Skills</h2>
-          <div className="h-[1px] flex-1 bg-gradient-to-r from-neutral-800 to-transparent" />
-        </div>
+        <SectionHeader label="Skills" className="mb-16 md:mb-24" />
 
         {/* The Technical Ledger */}
         <div className="border-t border-neutral-800/60 flex flex-col w-full">

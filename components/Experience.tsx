@@ -3,46 +3,9 @@
 import React from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-
-// Reusing the identical Star motif from the Education section for perfect cohesion
-const Star = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" fill="currentColor"/>
-  </svg>
-)
-
-const expCards =[
-  {
-    logoPath: "/coinbase.png",
-    company: "Coinbase",
-    title: "Incoming Software Engineer Intern",
-    date: "MAY 2026 — PRESENT",
-  },
-  {
-    logoPath: "/amazon.jpg",
-    company: "Amazon",
-    title: "Software Development Engineer Intern",
-    date: "MAY 2025 — AUG 2025",
-  },
-  {
-    logoPath: "/mb.jpeg",
-    company: "Michigan Blockchain",
-    title: "Investment Researcher",
-    date: "JAN 2025 — PRESENT",
-  },
-  {
-    logoPath: "/aims.png",
-    company: "AIMS Lab",
-    title: "Computing Group",
-    date: "SEP 2024 — PRESENT",
-  },
-  {
-    logoPath: "/mdst.jpeg",
-    company: "MDST",
-    title: "Data Analyst",
-    date: "AUG 2023 — PRESENT",
-  },
-]
+import { expCards } from "@/data"
+import SectionHeader from "./ui/SectionHeader"
+import AmbientLighting from "./ui/AmbientLighting"
 
 // Framer Motion Variants for a very high-end, subtle entrance
 const containerVariants = {
@@ -71,19 +34,11 @@ const Experience = () => {
       id="experience" 
       className="relative z-20 bg-[#050505] text-neutral-300 py-32 overflow-hidden selection:bg-white selection:text-black"
     >
-      {/* Subtle Ambient Lighting to match Education */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.02)_0%,transparent_70%)]" />
-      </div>
+      <AmbientLighting />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
         
-        {/* Section Header */}
-        <div className="flex items-center gap-6 mb-20 md:mb-32">
-          <Star className="text-white w-5 h-5 animate-pulse" />
-          <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-neutral-400">Experience</h2>
-          <div className="h-[1px] flex-1 bg-gradient-to-r from-neutral-800 to-transparent" />
-        </div>
+        <SectionHeader label="Experience" className="mb-20 md:mb-32" />
 
         {/* The Roster - Replacing the timeline */}
         <motion.div 

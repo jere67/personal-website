@@ -2,50 +2,14 @@
 
 import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-
-// Our custom structural motif
-const Star = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" fill="currentColor"/>
-  </svg>
-)
+import { courses, awards, activities } from "@/data"
+import Star from "./ui/Star"
+import SectionHeader from "./ui/SectionHeader"
+import AmbientLighting from "./ui/AmbientLighting"
 
 const Education = () => {
   const [isCoursesExpanded, setIsCoursesExpanded] = useState(false)
   const INITIAL_VISIBLE_COURSES = 4
-
-  const courses =[
-    { code: "EECS 491", title: "Distributed Systems", status: "" },
-    { code: "EECS 485", title: "Web Systems", status: "" },
-    { code: "EECS 482", title: "Operating Systems", status: "Scheduled" },
-    { code: "EECS 449", title: "Conversational Artificial Intelligence", status: "Scheduled" },
-    { code: "EECS 445", title: "Introduction to Machine Learning", status: "" },
-    { code: "EECS 398", title: "Practical Data Science", status: "" },
-    { code: "EECS 376", title: "Foundations of Computer Science", status: "" },
-    { code: "EECS 370", title: "Computer Organization", status: "" },
-    { code: "EECS 281", title: "Data Structures and Algorithms", status: "" },
-    { code: "EECS 280", title: "Programming (OOP) & Intro Data Structures", status: "" },
-    { code: "EECS 203", title: "Discrete Mathematics", status: "" },
-    { code: "MATH 425", title: "Introduction to Probability", status: "" },
-    { code: "MATH 217", title: "Linear Algebra", status: "" },
-    { code: "MATH", title: "Calculus 1, 2, 3", status: "" },
-    { code: "STATS 413", title: "Applied Regression Analysis", status: "" },
-  ]
-
-  const awards =[
-    { title: "James B. Angell Scholar", desc: "Achieve an 'A' record for 2+ consecutive terms" },
-    { title: "William J. Branstrom Freshman Prize", desc: "Top 5% of Class" },
-    { title: "Dean's Honor List", desc: "Awarded 2x" },
-    { title: "University Honors", desc: "Academic Excellence" },
-  ]
-
-  const activities =[
-    "Tau Beta Pi",
-    "Michigan Blockchain",
-    "Michigan Data Science Team (MDST)",
-    "Michigan Student Artificial Intelligence Lab (MSAIL)",
-    "Korean-American Scientists and Engineers Association (KSEA)",
-  ]
 
   return (
     <section 
@@ -54,19 +18,11 @@ const Education = () => {
       data-aos="fade-up" 
       data-aos-duration="700"
     >
-      {/* Subtle "Star-struck" Celestial Lighting */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.03)_0%,transparent_70%)]" />
-      </div>
+      <AmbientLighting />
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12">
         
-        {/* Section Header */}
-        <div className="flex items-center gap-6 mb-24 md:mb-32">
-          <Star className="text-white w-5 h-5 animate-pulse" />
-          <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-neutral-400">Education</h2>
-          <div className="h-[1px] flex-1 bg-gradient-to-r from-neutral-800 to-transparent" />
-        </div>
+        <SectionHeader label="Education" className="mb-24 md:mb-32" />
 
         {/* Asymmetrical Editorial Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">

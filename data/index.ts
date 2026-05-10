@@ -1,3 +1,14 @@
+// ─── Hero ────────────────────────────────────────────────────────────────────
+
+export const heroRoles: string[] = [
+  "Software Engineer",
+  "Website Developer",
+  "Data Scientist",
+  "Machine Learning Engineer",
+]
+
+// ─── Navigation ──────────────────────────────────────────────────────────────
+
 export const navItems = [
   { name: "About", link: "/about" },
   { name: "Projects", link: "/projects" },
@@ -68,49 +79,6 @@ export const gridItems = [
     spareImg: "",
   },
 ];
-
-export const images = [
-  {
-    id: 1,
-    img: "/img1.jpg",
-  },
-  {
-    id: 2,
-    img: "/img2.jpg",
-  },
-  {
-    id: 3,
-    img: "/img3.jpg",
-  },
-  {
-    id: 4,
-    img: "/img4.jpg",
-  },
-  {
-    id: 5,
-    img: "/img5.jpg",
-  },
-  {
-    id: 6,
-    img: "/img6.jpg",
-  },
-  {
-    id: 7,
-    img: "/img7.jpg",
-  },
-  {
-    id: 8,
-    img: "/img8.jpg",
-  },
-  {
-    id: 9,
-    img: "/img9.jpg",
-  },
-  {
-    id: 10,
-    img: "/img10.jpg",
-  },
-]
 
 export const projects = [
   {
@@ -225,3 +193,91 @@ export const socialMedia = [
     link: "https://www.linkedin.com/in/jeremy-moon7/"
   },
 ];
+
+// ─── Experience ───────────────────────────────────────────────────────────────
+
+export interface ExperienceCard {
+  logoPath: string
+  company: string
+  title: string
+  date: string
+}
+
+export const expCards: ExperienceCard[] = [
+  {
+    logoPath: "/coinbase.png",
+    company: "Coinbase",
+    title: "Incoming Software Engineer Intern",
+    date: "MAY 2026 — PRESENT",
+  },
+  {
+    logoPath: "/amazon.jpg",
+    company: "Amazon",
+    title: "Software Development Engineer Intern",
+    date: "MAY 2025 — AUG 2025",
+  },
+  {
+    logoPath: "/mb.jpeg",
+    company: "Michigan Blockchain",
+    title: "Investment Researcher",
+    date: "JAN 2025 — PRESENT",
+  },
+  {
+    logoPath: "/aims.png",
+    company: "AIMS Lab",
+    title: "Computing Group",
+    date: "SEP 2024 — PRESENT",
+  },
+  {
+    logoPath: "/mdst.jpeg",
+    company: "MDST",
+    title: "Data Analyst",
+    date: "AUG 2023 — PRESENT",
+  },
+]
+
+// ─── Education ────────────────────────────────────────────────────────────────
+
+export interface Course {
+  code: string
+  title: string
+  status: string
+}
+
+export interface Award {
+  title: string
+  desc: string
+}
+
+export const courses: Course[] = [
+  { code: "EECS 491", title: "Distributed Systems", status: "" },
+  { code: "EECS 485", title: "Web Systems", status: "" },
+  { code: "EECS 482", title: "Operating Systems", status: "Scheduled" },
+  { code: "EECS 449", title: "Conversational Artificial Intelligence", status: "Scheduled" },
+  { code: "EECS 445", title: "Introduction to Machine Learning", status: "" },
+  { code: "EECS 398", title: "Practical Data Science", status: "" },
+  { code: "EECS 376", title: "Foundations of Computer Science", status: "" },
+  { code: "EECS 370", title: "Computer Organization", status: "" },
+  { code: "EECS 281", title: "Data Structures and Algorithms", status: "" },
+  { code: "EECS 280", title: "Programming (OOP) & Intro Data Structures", status: "" },
+  { code: "EECS 203", title: "Discrete Mathematics", status: "" },
+  { code: "MATH 425", title: "Introduction to Probability", status: "" },
+  { code: "MATH 217", title: "Linear Algebra", status: "" },
+  { code: "MATH", title: "Calculus 1, 2, 3", status: "" },
+  { code: "STATS 413", title: "Applied Regression Analysis", status: "" },
+]
+
+export const awards: Award[] = [
+  { title: "James B. Angell Scholar", desc: "Achieve an 'A' record for 2+ consecutive terms" },
+  { title: "William J. Branstrom Freshman Prize", desc: "Top 5% of Class" },
+  { title: "Dean's Honor List", desc: "Awarded 2x" },
+  { title: "University Honors", desc: "Academic Excellence" },
+]
+
+export const activities: string[] = [
+  "Tau Beta Pi",
+  "Michigan Blockchain",
+  "Michigan Data Science Team (MDST)",
+  "Michigan Student Artificial Intelligence Lab (MSAIL)",
+  "Korean-American Scientists and Engineers Association (KSEA)",
+]

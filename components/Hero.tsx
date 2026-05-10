@@ -4,13 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedSignature from './ui/AnimatedSignature'
-
-const words =[
-  "Software Engineer", 
-  "Website Developer", 
-  "Data Scientist", 
-  "Machine Learning Engineer"
-]
+import { heroRoles } from '@/data'
 
 // --- HIGH PERFORMANCE HYPERDRIVE BACKGROUND ---
 const HyperdriveCanvas = () => {
@@ -111,7 +105,7 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length)
+      setCurrentWord((prev) => (prev + 1) % heroRoles.length)
     }, 3500)
     return () => clearInterval(interval)
   },[])
@@ -217,7 +211,7 @@ const Hero = () => {
                   // Removed whitespace-nowrap, added leading-tight for clean mobile wrapping
                   className="absolute w-full text-white font-medium tracking-tight text-center lg:text-left leading-tight px-4 lg:px-0"
                 >
-                  {words[currentWord]}
+                  {heroRoles[currentWord]}
                 </motion.span>
               </AnimatePresence>
             </div>
