@@ -36,7 +36,7 @@ const Footer = ({
   },[])
 
   return (
-    <footer className="relative z-20 bg-[#050505] text-neutral-300 pt-20 pb-10 overflow-hidden" id="footer">
+    <footer className="relative z-20 bg-[#050505] text-neutral-300 pt-12 pb-10 overflow-hidden" id="footer">
       
       {/* Subtle Bottom Glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100vw] h-[300px] bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none" />
@@ -45,7 +45,7 @@ const Footer = ({
         
         {/* HUGE TYPOGRAPHIC CTA */}
         {showContact && (
-          <div className="mb-24 md:mb-32">
+          <div className="mb-16 md:mb-20">
 
             <div className="flex flex-col items-start group">
               <p className="text-xl md:text-2xl text-neutral-500 font-light mb-2">Have a project in mind?</p>

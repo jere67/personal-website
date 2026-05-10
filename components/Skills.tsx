@@ -59,7 +59,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="relative z-20 bg-[#050505] text-neutral-300 py-32 overflow-hidden selection:bg-white selection:text-black"
+      className="relative z-20 bg-[#050505] text-neutral-300 pt-32 pb-14 overflow-hidden selection:bg-white selection:text-black"
       data-aos="fade-up"
       data-aos-duration="700"
     >
