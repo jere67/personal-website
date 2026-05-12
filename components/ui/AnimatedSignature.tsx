@@ -16,10 +16,9 @@ const AnimatedSignature = () => {
       transition: {
         pathLength: {
           delay: 2,
-          type: 'spring',
+          type: 'spring' as const,
           duration: 2.5,
           bounce: 0.2,
-          ease: 'easeInOut',
         },
         opacity: { duration: 2 },
       },
@@ -37,10 +36,9 @@ const AnimatedSignature = () => {
       transition: {
         pathLength: {
           delay: 2.3,
-          type: 'spring',
+          type: 'spring' as const,
           duration: 2.5,
           bounce: 0.2,
-          ease: 'easeInOut',
         },
         opacity: { duration: 2 },
       },

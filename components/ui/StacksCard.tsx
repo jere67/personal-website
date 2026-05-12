@@ -4,8 +4,9 @@ import {
   SiCss3, SiExpress, SiFigma, SiFlask, SiGit, SiHtml5,
   SiJavascript, SiMarkdown, SiMui, SiNextdotjs, SiNodedotjs,
   SiPostgresql, SiPython, SiPytorch, SiReact, SiTailwindcss,
-  SiTensorflow, SiTypescript, SiVisualstudiocode, SiVite
+  SiTensorflow, SiTypescript, SiVite
 } from '@icons-pack/react-simple-icons'
+import { SiVisualstudiocode } from 'react-icons/si'
 
 const row1 =[SiHtml5, SiCss3, SiJavascript, SiTypescript, SiFigma, SiTailwindcss, SiNextdotjs, SiReact, SiPython, SiPostgresql]
 const row2 =[SiExpress, SiNodedotjs, SiFlask, SiGit, SiVite, SiVisualstudiocode, SiMui, SiMarkdown, SiTensorflow, SiPytorch]
