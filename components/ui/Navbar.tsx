@@ -63,7 +63,7 @@ export const Navbar = ({
                     <motion.div
                       layoutId="nav-indicator"
                       className="absolute inset-0 bg-white/10 border border-white/10 rounded-full -z-10"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      transition={{ type: "spring" as const, stiffness: 400, damping: 30 }}
                     />
                   )}
                   {item.name}
