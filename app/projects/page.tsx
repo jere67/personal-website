@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import { NavbarExternal } from "@/components/NavbarExternal";
 import React from "react";
 import { Projects } from "./Projects";
 import { TracingBeam } from "@/components/ui/TracingBeam";

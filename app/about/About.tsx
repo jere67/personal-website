@@ -5,21 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { OrbitControls, Html, Float } from "@react-three/drei"
 import * as THREE from "three"
-
-const Star = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" fill="currentColor"/>
-  </svg>
-)
-
-// Reusable elegant section header matching Education & Experience
-const SectionHeader = ({ title }: { title: string }) => (
-  <div className="flex items-center gap-6 mb-20 md:mb-24">
-    <Star className="text-white w-5 h-5 animate-pulse" />
-    <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-neutral-400">{title}</h2>
-    <div className="h-[1px] flex-1 bg-gradient-to-r from-neutral-800 to-transparent" />
-  </div>
-)
+import SectionHeader from "@/components/ui/SectionHeader"
 
 const diveItems =[
   { prefix: "Began coding at 14 and developed a ", linkText: "passion", suffix: "for building software and systems." },
@@ -207,7 +193,7 @@ export default function AboutContent() {
       {/* --- A BRIEF DIVE (Ledger List) --- */}
       <section className="relative py-24 z-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <SectionHeader title="A Brief Dive" />
+          <SectionHeader label="A Brief Dive" className="mb-20 md:mb-24" />
           
           {/* Centered List Container */}
           <div className="max-w-4xl mx-auto flex flex-col justify-center">
@@ -237,7 +223,7 @@ export default function AboutContent() {
       <section className="relative py-32 z-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
-          <SectionHeader title="Interests" />
+          <SectionHeader label="Interests" className="mb-20 md:mb-24" />
 
           {/* === DESKTOP: 3D ORBIT === */}
           <div className="relative w-full h-[600px] md:h-[750px] group hidden md:block pointer-events-none">
@@ -380,7 +366,7 @@ export default function AboutContent() {
       <section className="relative py-32 z-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
-          <SectionHeader title="Music" />
+          <SectionHeader label="Music" className="mb-20 md:mb-24" />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
             
