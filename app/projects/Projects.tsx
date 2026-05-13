@@ -3,12 +3,12 @@
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useOutsideClick } from "./hooks/UseOutsideClick";
+import { useOutsideClick } from "@/hooks/useOutsideClick";
 import { webApplications, machineLearning, dataScience, computerScience } from "./data";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { FaLocationArrow } from "react-icons/fa6";
+import SectionHeader from "@/components/ui/SectionHeader";
 
-// Type definition for cleaner state management
 type Project = {
   description: string;
   title: string;
@@ -20,21 +20,6 @@ type Project = {
   demoLink: string;
   content: string;
 };
-
-// --- MOTIF COMPONENTS ---
-const Star = ({ className = "w-4 h-4" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-    <path d="M12 0C12 6.62742 17.3726 12 24 12C17.3726 12 12 17.3726 12 24C12 17.3726 6.62742 12 0 12C6.62742 12 12 6.62742 12 0Z" fill="currentColor"/>
-  </svg>
-);
-
-const SectionHeader = ({ title }: { title: string }) => (
-  <div className="flex items-center gap-6 mb-12 mt-20">
-    <Star className="text-white w-5 h-5 animate-pulse" />
-    <h2 className="text-xs font-mono uppercase tracking-[0.3em] text-neutral-400">{title}</h2>
-    <div className="h-[1px] flex-1 bg-gradient-to-r from-neutral-800 to-transparent" />
-  </div>
-);
 
 export function Projects() {
   const [active, setActive] = useState<Project | null>(null);
@@ -235,22 +220,22 @@ export function Projects() {
       {/* --- PROJECT CATEGORIES --- */}
       <div className="flex flex-col gap-10">
         <div>
-          <SectionHeader title="Web Applications" />
+          <SectionHeader label="Web Applications" className="mb-12 mt-20" />
           <ProjectGrid data={webApplications} />
         </div>
 
         <div>
-          <SectionHeader title="Data Science" />
+          <SectionHeader label="Data Science" className="mb-12 mt-20" />
           <ProjectGrid data={dataScience} />
         </div>
 
         <div>
-          <SectionHeader title="AI / Machine Learning" />
+          <SectionHeader label="AI / Machine Learning" className="mb-12 mt-20" />
           <ProjectGrid data={machineLearning} />
         </div>
 
         <div>
-          <SectionHeader title="Computer Science" />
+          <SectionHeader label="Computer Science" className="mb-12 mt-20" />
           <ProjectGrid data={computerScience} />
         </div>
       </div>
